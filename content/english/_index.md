@@ -1,9 +1,12 @@
 ---
-author: Hugo Authors
+author: magisky
 ---
 
+```
+Welcome enter into my blog.I'm a student studying probability and statistic.
 
-This file is left intentionally empty by default to be backwards compatible with the initial theme setup.
+
+```
 
 Although the theme has advanced a little bit and it now allows to specify the content on the main page (even if the list of posts/articles is not intended).
 This can be:
