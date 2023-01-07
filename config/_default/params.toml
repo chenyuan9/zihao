@@ -1,21 +1,21 @@
 
-title = "I'm magiskxzy"
-author = "magiskxzy"
+title = "I'm magisky"
+author = "magisky"
 #copyright = "2020-2021"
-description = "Call me magiskxzy"
-profilePicture = "images/xiao.jpg"
+description = "Hey guy.You can call me magisky"
+profilePicture = "images/2023hello.jpg"
 keywords = ""
 favicon = "favicons/"
 # example ["css/custom.css"]
 customCss = []
 # example ["js/custom.js"]
 customJs = [] 
-mainSections = ["hackers"]
+mainSections = ["painters"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
 # Form Spree Contact Form
-#contactFormAction = "https://formspree.io/f/your-form-hash-here"
-#contactFormReCaptcha = "your-site-key-here"
+contactFormAction = "https://formspree.io/f/your-form-hash-here"
+contactFormReCaptcha = "your-site-key-here"
 # Google Fonts
 #googleFonts = ["Indie+Flower", "Roboto:ital,wght@0,100;0,400;0,700;1,400"]
 # Google Site Verify
