@@ -3,7 +3,7 @@ date: "2023-01-01T22:47:41+00:00"
 draft: false
 tags:
 - 年终总结
-title: 2023,你好哇
+title: 愿2022成为历史
 ---
 
 A personal and around place summary of 2022.
