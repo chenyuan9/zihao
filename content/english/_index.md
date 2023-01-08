@@ -12,9 +12,13 @@ author: magisky
 
 
 
-##### 你好，欢迎访问我的网站。我会在这里留下一些我的学习记录或者感想。
+###### 你好，欢迎进入我的网站。我是一名学习概率统计的学生。
+###### 我喜欢在各种系统中漫游，如Android、Linux和Windows。
+###### 此外，我还是一个数学和摄影的爱好者。
+###### 我会在这里留下一些我的学习记录或者感想。
+
+## 感谢访问
 
 
-
-Remember that you can also specify a section header for the posts below by configuring the `mainSectionsTitle` parameter in the front matter of this file.
+This file is named "云门 & PAINTERS",some of my reflections will be recorded here.  
 -->
