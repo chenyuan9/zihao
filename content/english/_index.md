@@ -5,8 +5,8 @@ author: magisky
 
 ##### Welcome enter into my blog.I'm a student studying probability and statistic.  
 ##### My hobbies is roaming the system such as Android,Linux or Windows.  
-##### In addition,I'm a math and photograph lover.I will write tech blogs and
-##### reflections in here.
+##### In addition,I'm a math and photograph lover.
+##### I will write tech blogs and reflections in here.
 
 ## Thanks for visiting
 
