@@ -4,25 +4,14 @@ aliases:
 - about-hugo
 - contact
 author: Hugo Authors
-date: "2019-02-28"
-description: Hugo, the world's fastest framework for building websites
+date: "2023-01-01"
 title: About
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache License 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+#### 你好，我在这里对我的博客文件夹命名作出一些解释：  
+文件夹/兰台&HACKERS，其中的“兰台”指的是中国古代汉朝的图书馆，其中的“Hackers”取自  
+保罗.格雷厄姆的《黑客与画家》一书，我会在这一文件夹中写一些技术博客和学习记录；  
 
-Hugo makes use of a variety of open source projects including:
-
-- https://github.com/yuin/goldmark
-- https://github.com/alecthomas/chroma
-- https://github.com/muesli/smartcrop
-- https://github.com/spf13/cobra
-- https://github.com/spf13/viper
-
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+文件夹/云门&PAINTERS,其中的“云门”取自南北朝时期庾信《枯树赋》中记载的一首上古乐曲，  
+其中的“Painters”同样取自保罗.格雷厄姆的《黑客与画家》一书，我会在这一文件夹中写  
+关于书、电影、摄影的感悟。
