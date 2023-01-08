@@ -2,27 +2,17 @@
 author: magisky
 ---
 
-```
-Welcome enter into my blog.I'm a student studying probability and statistic.
+
+### Welcome enter into my blog.I'm a student studying probability and statistic.  
+### My hobbies is roaming about system such as Android,Linux or Windows.  
+### In addition,I'm a math and photograph lover.I will write  
+### tech blogs and reflections in here.
+
+## Thanks for visiting
+
+## 你好，欢迎访问我的网站。
 
 
-```
-
-Although the theme has advanced a little bit and it now allows to specify the content on the main page (even if the list of posts/articles is not intended).
-This can be:
-- with the list of posts/articles (default: `mainSections = ["post"]) or
-- without the list of posts/articles (by setting `mainSections = [""]`)
-
-Markdown supported, ie:
-
-```
-# Welcome
-
-- Hugo :rocket:
-- Hugo theme :rocket:
-
-Don't forget to check the README.md file!
-```
 
 Remember that you can also specify a section header for the posts below by configuring the `mainSectionsTitle` parameter in the front matter of this file.
 -->
