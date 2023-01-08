@@ -1,0 +1,12 @@
+---
+title: "我与机器相互学习"
+author: "magisky"
+date: "2023-01-08"
+output: html_document
+tags:
+  - python
+  - 深度学习
+  - 神经网络
+---
+
+还没有写完，嘿嘿嘿
