@@ -2,15 +2,17 @@
 author: magisky
 ---
 
+--
+--
 
-##### Welcome enter into my blog.I'm a student studying probability and statistic.  
+##### Welcome enter into my site.I'm a student studying probability and statistic.  
 ##### My hobbies is roaming the system such as Android,Linux or Windows.  
 ##### In addition,I'm a math and photograph lover.
 ##### I will write tech blogs and reflections in here.
 
 ## Thanks for visiting
 
-
+--
 
 ###### 你好，欢迎进入我的网站。我是一名学习概率统计的学生。
 ###### 我喜欢在各种系统中漫游，如Android、Linux和Windows。
@@ -22,5 +24,5 @@ author: magisky
 --
 --
 
-This file is named "兰台 & HACKERS",some of my tech blogs will be recorded here.  
--->
+This file is named "兰台 & HACKERS",some of my tech blogs will be recorded here.
+$$\downarrow$$
