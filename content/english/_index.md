@@ -24,5 +24,5 @@ author: magisky
 --
 --
 
-This file is named "兰台 & HACKERS",some of my tech blogs will be recorded here.
+This file is named "云门 & Painters",some of my reflection will be recorded here.
 $$\downarrow$$
