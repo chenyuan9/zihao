@@ -12,6 +12,8 @@ Make a record of a poem that Edmond Halley wrote for Newton.
 
 <!---more--->
 
+![](IsaacNewton/IsaacNewton.jpg "Sir Isaac Newton")
+
 请看天空的布局，神圣物质的平衡，
 
 请看朱庇特的计算，和造物主的规则
@@ -109,4 +111,3 @@ Make a record of a poem that Edmond Halley wrote for Newton.
 居住在他纯洁的心中，他充满了神力；
 
 比任何一个凡人更接近神。
-
