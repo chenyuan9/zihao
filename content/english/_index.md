@@ -1,5 +1,5 @@
 ---
-author: magisky
+author: magisk
 ---
 
 --
