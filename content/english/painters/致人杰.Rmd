@@ -14,7 +14,7 @@ Make a record of a poem that Edmond Halley wrote for Newton.
 
 <!---more--->
 
-![](/images/IsaacNewton.jpg "IsaacNewton"){width="400"}
+![](/images/IsaacNewton.jpg "IsaacNewton")
 
 请看天空的布局，神圣物质的平衡，
 
