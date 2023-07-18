@@ -60,12 +60,12 @@ use = "katex"  # options: "katex", "mathjax". default is "katex".
 
 [[socialIcons]]
 icon = "fab fa-twitter"
-title = "twitter"
+title = "Twitter"
 url = "https://twitter.com/magiskxzy"
 
 [[socialIcons]]
 icon = "fab fa-telegram"
-title = "telegram"
+title = "Telegram"
 url = "https://t.me/magisk_xzy"
 
 [[socialIcons]]
@@ -80,7 +80,7 @@ url = "https://github.com/chenyuan9"
 
 [[socialIcons]]
 icon = "fas fa-envelope"
-title = "e-mail"
+title = "E-mail"
 url = "mailto:894473271xzy@gmail.com"
 
 
