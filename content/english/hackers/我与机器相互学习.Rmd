@@ -1,6 +1,6 @@
 ---
 title: "我与机器相互学习"
-author: "magisky"
+author: "magisk"
 date: "2023-01-08"
 output: html_document
 tags:

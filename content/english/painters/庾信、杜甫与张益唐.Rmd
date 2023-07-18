@@ -1,6 +1,6 @@
 ---
 title: "庾信、杜甫与张益唐"
-author: "magisky"
+author: "magisk"
 date: "2022-11-30"
 output: html_document
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "揭谛揭谛，波罗揭谛"
-author: "magisky"
+author: "magisk"
 date: "2023-03-31"
 output: html_document
 ---
