@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sir Isaac Newton on My blog</title>
+    <link>https://example.com/tags/sir-isaac-newton/</link>
+    <description>Recent content in Sir Isaac Newton on My blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/sir-isaac-newton/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>致人杰</title>
+      <link>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</guid>
+      
+        <description>Make a record of a poem that Edmond Halley wrote for Newton.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

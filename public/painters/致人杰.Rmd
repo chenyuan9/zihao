@@ -1,8 +1,10 @@
 ---
 title: "致人杰"
-author: "magisky"
+author: "magisk"
 date: "2023-02-25"
-output: html_document
+output: 
+  html_document: 
+    fig_caption: yes
 tags: 
   - Sir Isaac Newton
   - math
@@ -11,6 +13,8 @@ tags:
 Make a record of a poem that Edmond Halley wrote for Newton.
 
 <!---more--->
+
+![](/images/IsaacNewton.jpg "IsaacNewton")
 
 请看天空的布局，神圣物质的平衡，
 
@@ -109,4 +113,3 @@ Make a record of a poem that Edmond Halley wrote for Newton.
 居住在他纯洁的心中，他充满了神力；
 
 比任何一个凡人更接近神。
-
