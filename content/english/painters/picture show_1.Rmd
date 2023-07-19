@@ -3,6 +3,7 @@ title: "picture show_1"
 author: "magisk"
 date: "2023-07-18"
 output: html_document
+thumbnail: "images/landscape.jpg"
 ---
 
 ![](/images/Nikon/DSC_1552-3.JPG)
