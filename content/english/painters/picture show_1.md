@@ -33,5 +33,3 @@ thumbnail: "images/landscape.jpg"
 ![](/images/Nikon/picture_show1/DSC_0402-1.JPG)
 
 ![](/images/Nikon/picture_show1/DSC_1600.JPG)
-
-
