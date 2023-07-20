@@ -2,7 +2,7 @@
 title: "picture show_1"
 author: "magisk"
 date: "2023-07-18"
-output: html_document
+output: md_document
 thumbnail: "images/landscape.jpg"
 tags:
   - photography
