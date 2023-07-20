@@ -4,6 +4,8 @@ author: "magisk"
 date: "2023-07-18"
 output: html_document
 thumbnail: "images/landscape.jpg"
+tags:
+  - photography
 ---
 
 ![](/images/Nikon/picture_show1/DSC_1552-3.JPG)
