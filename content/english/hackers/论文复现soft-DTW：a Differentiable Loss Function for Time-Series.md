@@ -1,5 +1,5 @@
 ---
-title: "论文复现：soft-DTW：a Differentiable Loss Function for Time-Series"
+title: "论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』"
 author: "magisk"
 date: "2023-07-20"
 output: md_document
