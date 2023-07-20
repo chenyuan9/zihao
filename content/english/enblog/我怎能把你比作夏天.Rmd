@@ -2,7 +2,7 @@
 title: "我怎能把你比作夏天"
 author: "magisk"
 date: "2023-07-20"
-output: html_document
+output: md_document
 tags: 
   - Shakespeare
   - Classical
