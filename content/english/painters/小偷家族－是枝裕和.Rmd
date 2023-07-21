@@ -3,6 +3,8 @@ title: "『小偷家族』－是枝裕和"
 author: "magisk"
 date: "2023-07-21"
 output: md_document
+tags:
+  - 电影
 ---
 
 <!--more-->
