@@ -1,3 +1,10 @@
+---
+title: "致命魔术－诺兰"
+author: "magisk"
+date: "2023-07-24"
+output: md_document
+---
+
 <!--more-->
 
 一些剧照：
