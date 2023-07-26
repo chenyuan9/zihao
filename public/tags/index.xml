@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My blog</title>
+    <title>Tags on Magisk&#39;s Blog</title>
     <link>https://example.com/tags/</link>
-    <description>Recent content in Tags on My blog</description>
+    <description>Recent content in Tags on Magisk&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>math</title>
-      <link>https://example.com/tags/math/</link>
-      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <title>电影</title>
+      <link>https://example.com/tags/%E7%94%B5%E5%BD%B1/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/math/</guid>
+      <guid>https://example.com/tags/%E7%94%B5%E5%BD%B1/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>report</title>
+      <link>https://example.com/tags/report/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/report/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Classical</title>
+      <link>https://example.com/tags/classical/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/classical/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Shakespeare</title>
+      <link>https://example.com/tags/shakespeare/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/shakespeare/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>photography</title>
+      <link>https://example.com/tags/photography/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/photography/</guid>
       
         <description></description>
       
@@ -79,6 +123,17 @@
       <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://example.com/tags/math/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/math/</guid>
       
         <description></description>
       

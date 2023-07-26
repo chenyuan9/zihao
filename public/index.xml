@@ -1,12 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My blog</title>
+    <title>Magisk&#39;s Blog</title>
     <link>https://example.com/</link>
-    <description>Recent content on My blog</description>
+    <description>Recent content on Magisk&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>『致命魔术』－诺兰</title>
+      <link>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>China cannot allow jobless young to ‘lie flat’</title>
+      <link>https://example.com/enblog/china-cannot-allow-jobless-young-to-lie-flat/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/enblog/china-cannot-allow-jobless-young-to-lie-flat/</guid>
+      
+        <description>China cannot allow jobless young to&amp;rsquo;lie flat&amp;rsquo;原文链接</description>
+      
+    </item>
+    
+    <item>
+      <title>『小偷家族』－是枝裕和</title>
+      <link>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『情书』－岩井俊二</title>
+      <link>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>我怎能把你比作夏天</title>
+      <link>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</guid>
+      
+        <description>莎士比亚十四行诗第18首
+Shall I compare thee to a summer&amp;rsquo;s day?
+Thou art more lovely and more temperate:</description>
+      
+    </item>
+    
+    <item>
+      <title>论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』</title>
+      <link>https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/</guid>
+      
+        <description>soft-DTW：a Differentiable Loss Function for Time-Series原文下载
+翻译 摘要： 我们在本文提出一种基于著名的动态时间规整(DTW)差异的可微学习损失函数，用于比较时间序列数据之间的差异。与欧氏距离不同，DTW可以比较具有不同长度的时间序列，并且对于时间维度上的平移或拉伸具有鲁棒性。为了计算DTW,一种常规方法是使用动态规划解决两个时间序列之间的最小成本校准。我们的工作利用了DTW的一种平滑形式，称为soft-DTW，它计算所有校准成本的soft最小值。我们在这篇论文中展示了soft-DTW是一个可微的损失函数，而且它的值和梯度都可以以二次时间/空间复杂度计算（而DTW具有二次时间复杂度但线性空间复杂度）。我们展示了这种正则化特别适用于在DTW几何空间下对时间序列进行平均化和聚类的任务，在这个任务中，我们的方法明显优于现有的基准方法。接下来，我们建议通过以soft-DTW的方式最小化输出时间序列机器与地面真实标签之间的拟合来调整其参数。
+1.介绍 监督学习的目标是通过使用输入与输出对象的示例，学习将输入映射到输出的关系。当输出对象具有结构时，例如它们不是向量，这个任务明显更加困难。我们在这里研究每个输出对象都是时间序列的情况，即一系列随时间索引的观测值。虽然将时间视为另一个特征，并将向量时间序列处理为所有这些向量的串联是很诱人的，但采用这种简单的方法会导致几个实际问题：时间索引的现象通常在时间轴上的某些区域被拉伸（例如，以稍慢于平常的速度发出的单词），但其特征不受影响；不同的采样条件可能导致它们具有不同的长度；时间序列可能不同步。</description>
+      
+    </item>
+    
     <item>
       <title>picture show_1</title>
       <link>https://example.com/painters/picture-show_1/</link>
@@ -138,7 +208,8 @@
       
       <guid>https://example.com/imprint/</guid>
       
-        <description>莫问天涯路几重，轻衫侧帽且从容。几回宿酒添新酒，长是晨钟待晚钟。 情转薄，意还浓。倩谁指点看芙蓉。行人尽说江南好，君在巫山第几峰。</description>
+        <description>《鹧鸪天》
+莫	问	天	涯	路	几	重	，	轻	衫	侧	帽	且	从	容	。</description>
       
     </item>
     

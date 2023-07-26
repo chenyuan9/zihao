@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shakespeare on Magisk&#39;s Blog</title>
+    <link>https://example.com/tags/shakespeare/</link>
+    <description>Recent content in Shakespeare on Magisk&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/shakespeare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我怎能把你比作夏天</title>
+      <link>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</guid>
+      
+        <description>莎士比亚十四行诗第18首
+Shall I compare thee to a summer&amp;rsquo;s day?
+Thou art more lovely and more temperate:</description>
+      
+    </item>
+    
+  </channel>
+</rss>

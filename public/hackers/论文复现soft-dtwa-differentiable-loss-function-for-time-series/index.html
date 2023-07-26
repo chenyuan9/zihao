@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    magisk
+        |
+        论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.105.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="magisk" />
+  <meta
+    name="description"
+    content="Hey guy.You can call me magisk"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.1147aa5bacb4bce677a0e264073829caedb82fd18ea07a5f1d80521f539d1c45.css"
+      integrity="sha256-EUeqW6y0vOZ3oOJkBzgpyu24L9GOoHpfHYBSH1OdHEU="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』"/>
+<meta name="twitter:description" content="soft-DTW：a Differentiable Loss Function for Time-Series原文下载
+翻译 摘要： 我们在本文提出一种基于著名的动态时间规整(DTW)差异的可微学习损失函数，用于比较时间序列数据之间的差异。与欧氏距离不同，DTW可以比较具有不同长度的时间序列，并且对于时间维度上的平移或拉伸具有鲁棒性。为了计算DTW,一种常规方法是使用动态规划解决两个时间序列之间的最小成本校准。我们的工作利用了DTW的一种平滑形式，称为soft-DTW，它计算所有校准成本的soft最小值。我们在这篇论文中展示了soft-DTW是一个可微的损失函数，而且它的值和梯度都可以以二次时间/空间复杂度计算（而DTW具有二次时间复杂度但线性空间复杂度）。我们展示了这种正则化特别适用于在DTW几何空间下对时间序列进行平均化和聚类的任务，在这个任务中，我们的方法明显优于现有的基准方法。接下来，我们建议通过以soft-DTW的方式最小化输出时间序列机器与地面真实标签之间的拟合来调整其参数。
+1.介绍 监督学习的目标是通过使用输入与输出对象的示例，学习将输入映射到输出的关系。当输出对象具有结构时，例如它们不是向量，这个任务明显更加困难。我们在这里研究每个输出对象都是时间序列的情况，即一系列随时间索引的观测值。虽然将时间视为另一个特征，并将向量时间序列处理为所有这些向量的串联是很诱人的，但采用这种简单的方法会导致几个实际问题：时间索引的现象通常在时间轴上的某些区域被拉伸（例如，以稍慢于平常的速度发出的单词），但其特征不受影响；不同的采样条件可能导致它们具有不同的长度；时间序列可能不同步。"/>
+
+
+
+  
+  <meta property="og:title" content="论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』" />
+<meta property="og:description" content="soft-DTW：a Differentiable Loss Function for Time-Series原文下载
+翻译 摘要： 我们在本文提出一种基于著名的动态时间规整(DTW)差异的可微学习损失函数，用于比较时间序列数据之间的差异。与欧氏距离不同，DTW可以比较具有不同长度的时间序列，并且对于时间维度上的平移或拉伸具有鲁棒性。为了计算DTW,一种常规方法是使用动态规划解决两个时间序列之间的最小成本校准。我们的工作利用了DTW的一种平滑形式，称为soft-DTW，它计算所有校准成本的soft最小值。我们在这篇论文中展示了soft-DTW是一个可微的损失函数，而且它的值和梯度都可以以二次时间/空间复杂度计算（而DTW具有二次时间复杂度但线性空间复杂度）。我们展示了这种正则化特别适用于在DTW几何空间下对时间序列进行平均化和聚类的任务，在这个任务中，我们的方法明显优于现有的基准方法。接下来，我们建议通过以soft-DTW的方式最小化输出时间序列机器与地面真实标签之间的拟合来调整其参数。
+1.介绍 监督学习的目标是通过使用输入与输出对象的示例，学习将输入映射到输出的关系。当输出对象具有结构时，例如它们不是向量，这个任务明显更加困难。我们在这里研究每个输出对象都是时间序列的情况，即一系列随时间索引的观测值。虽然将时间视为另一个特征，并将向量时间序列处理为所有这些向量的串联是很诱人的，但采用这种简单的方法会导致几个实际问题：时间索引的现象通常在时间轴上的某些区域被拉伸（例如，以稍慢于平常的速度发出的单词），但其特征不受影响；不同的采样条件可能导致它们具有不同的长度；时间序列可能不同步。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/" /><meta property="article:section" content="hackers" />
+<meta property="article:published_time" content="2023-07-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-07-20T00:00:00+00:00" /><meta property="og:site_name" content="Magisk&#39;s Blog" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "hackers",
+        "name": "论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』",
+        "headline": "论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』",
+        "alternativeHeadline": "",
+        "description": "
+      
+        soft-DTW：a Differentiable Loss Function for Time-Series原文下载\n翻译 摘要： 我们在本文提出一种基于著名的动态时间规整(DTW)差异的可微学习损失函数，用于比较时间序列数据之间的差异。与欧氏距离不同，DTW可以比较具有不同长度的时间序列，并且对于时间维度上的平移或拉伸具有鲁棒性。为了计算DTW,一种常规方法是使用动态规划解决两个时间序列之间的最小成本校准。我们的工作利用了DTW的一种平滑形式，称为soft-DTW，它计算所有校准成本的soft最小值。我们在这篇论文中展示了soft-DTW是一个可微的损失函数，而且它的值和梯度都可以以二次时间\/空间复杂度计算（而DTW具有二次时间复杂度但线性空间复杂度）。我们展示了这种正则化特别适用于在DTW几何空间下对时间序列进行平均化和聚类的任务，在这个任务中，我们的方法明显优于现有的基准方法。接下来，我们建议通过以soft-DTW的方式最小化输出时间序列机器与地面真实标签之间的拟合来调整其参数。\n1.介绍 监督学习的目标是通过使用输入与输出对象的示例，学习将输入映射到输出的关系。当输出对象具有结构时，例如它们不是向量，这个任务明显更加困难。我们在这里研究每个输出对象都是时间序列的情况，即一系列随时间索引的观测值。虽然将时间视为另一个特征，并将向量时间序列处理为所有这些向量的串联是很诱人的，但采用这种简单的方法会导致几个实际问题：时间索引的现象通常在时间轴上的某些区域被拉伸（例如，以稍慢于平常的速度发出的单词），但其特征不受影响；不同的采样条件可能导致它们具有不同的长度；时间序列可能不同步。
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/example.com\/hackers\/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-07-20T00:00:00.00Z",
+        "datePublished": "2023-07-20T00:00:00.00Z",
+        "dateModified": "2023-07-20T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "magisk",
+            "url": "https://example.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/example.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/example.com\/hackers\/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series\/",
+        "wordCount" : "23",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profilezzz.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Magisk&#39;s Blog</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Hey guy.You can call me magisk</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://twitter.com/magiskxzy"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Twitter"
+            title="Twitter"
+          >
+            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://t.me/magisk_xzy"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Telegram"
+            title="Telegram"
+          >
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://steamcommunity.com/profiles/76561199093840652"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Steam"
+            title="Steam"
+          >
+            <i class="fab fa-steam fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/chenyuan9"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:894473271xzy@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        magisk
+        2023
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/hackers/"
+              
+              title=""
+              >兰台 &amp; Hackers</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/painters/"
+              
+              title=""
+              >云门 &amp; Painters</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/enblog/"
+              
+              title=""
+              >en blog</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >about</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』</h1>
+      <p><a href="https://arxiv.org/pdf/1703.01541v2.pdf">soft-DTW：a Differentiable Loss Function for Time-Series</a>原文下载</p>
+<h2 id="翻译">翻译</h2>
+<h3 id="摘要">摘要：</h3>
+<p>我们在本文提出一种基于著名的动态时间规整(DTW)差异的可微学习损失函数，用于比较时间序列数据之间的差异。与欧氏距离不同，DTW可以比较具有不同长度的时间序列，并且对于时间维度上的平移或拉伸具有鲁棒性。为了计算DTW,一种常规方法是使用动态规划解决两个时间序列之间的最小成本校准。我们的工作利用了DTW的一种平滑形式，称为soft-DTW，它计算所有校准成本的soft最小值。我们在这篇论文中展示了soft-DTW是一个可微的损失函数，而且它的值和梯度都可以以二次时间/空间复杂度计算（而DTW具有二次时间复杂度但线性空间复杂度）。我们展示了这种正则化特别适用于在DTW几何空间下对时间序列进行平均化和聚类的任务，在这个任务中，我们的方法明显优于现有的基准方法。接下来，我们建议通过以soft-DTW的方式最小化输出时间序列机器与地面真实标签之间的拟合来调整其参数。</p>
+<h3 id="1介绍">1.介绍</h3>
+<p>监督学习的目标是通过使用输入与输出对象的示例，学习将输入映射到输出的关系。当输出对象具有结构时，例如它们不是向量，这个任务明显更加困难。我们在这里研究每个输出对象都是时间序列的情况，即一系列随时间索引的观测值。虽然将时间视为另一个特征，并将向量时间序列处理为所有这些向量的串联是很诱人的，但采用这种简单的方法会导致几个实际问题：时间索引的现象通常在时间轴上的某些区域被拉伸（例如，以稍慢于平常的速度发出的单词），但其特征不受影响；不同的采样条件可能导致它们具有不同的长度；时间序列可能不同步。</p>
+<p><strong>DTW模型</strong> 用于时间序列的生成模型通常在考虑上述不变性的基础上构建：这些属性通常通过潜在变量和/或马尔可夫假设来处理。一种受到几何学启发的更简单的方法，是通过直接定义时间序列之间的差异来实现这些不变性，例如DTW score。DTW计算两个时间序列之间的最佳对齐（最优对齐本身也可能是感兴趣的），这两个时间序列的长度分别为n和m。首先，通过计算这些点之间的nchengm成对距离矩阵，然后使用Bellman递推法进行动态规划（DP），其计算成本为二次复杂度（nm）。动态时间规整（DTW）的几何性质。由于DTW有效地编码了一类有用的不变性，它经常被用于判别性框架中（例如，使用k-NN或SVM分类器），以预测实数或类别标签的输出，并在该背景下进行了优化以提高运行速度。</p>
+<p><strong>DTW的几何性质</strong> 由于DTW有效地编码了一类有用的不变性，它经常被用于判别性框架中（例如，使用k-NN或SVM分类器），以预测实数或类别标签的输出，并在该背景下进行了优化以提高运行速度。最近Petitjean等人在2011年的研究和Petitjean同Ganc¸arski在2012年的研究表明，DTW可以用于更具创新性的任务，例如使用DTW差异进行时间序列平均化。更普遍地说，将时间序列的中心合成为一个整体可以被视为使用DTW作为拟合损失输出整个时间序列的首次尝试。然而，从计算角度来看，这些方法受到DTW不可微分且在优化过程中不稳定的影响。</p>
+<p><strong>Soft-DTW</strong> 与这些发展平行的是，一些作者考虑使用Bellman的递归的平滑修改来定义平滑的DP距离或核函数。当应用于DTW差异时，这种正则化导致了soft-DTW得分，它考虑了两个时间序列之间所有可能对齐所涵盖的所有成本的软最小值。尽管考虑了所有对齐而不仅仅是最优对齐，但soft-DTW可以通过对Bellman递归进行轻微修改来计算，在这种修改中，所有的(min, +)运算被替换为(+, ×) 运算。因此，无论是DTW还是soft-DTW，都具有相对于序列长度的时间复杂度为二次的特点，而空间复杂度为线性。由于soft-DTW可以与核机器一起使用，在分类任务中使用soft-DTW相对于DTW通常会观察到性能的提升。</p>
+<p><strong>我们的贡献</strong> 在本论文中，我们探索了平滑动态时间规整（DTW）的另一个重要优势：与原始的DTW差异不同，soft-DTW在所有参数上都是可微分的。我们展示了soft-DTW相对于其所有变量的梯度可以作为计算差异本身的副产品得到，但会增加二次存储成本。我们利用这一事实提出了一种替代方法来处理（Petitjean等人，2011年）提出的DTW质心聚类算法（DBA），并观察到我们的平滑方法在该任务中明显优于已知的基准方法。更一般地说，我们建议使用soft-DTW作为拟合项来比较合成时间序列片段的机器输出与地面真实观测的差异，就像例如，正则化的Wasserstein距离用于计算质心（Cuturi＆Doucet，2014年），后来用于拟合输出直方图的判别器（Zhang等人，2015年；Rolet等人，2016年）一样。当与灵活的学习架构（如神经网络）配对时，soft-DTW允许进行可微的端到端方法，用于设计时间序列的预测和生成模型，如图1所示。在我们提出的方法中，soft-DTW作为一个拟合项，可以用于将合成的时间序列片段与地面真实观测进行比较，从而设计预测和生成时间序列的机器学习模型。在使用灵活的学习架构（如神经网络）时，soft-DTW允许实现端到端的可微分学习方法。这种方法可以应用于多种时间序列相关的任务，如分类、聚类等。我们的实验结果表明，使用soft-DTW可以在一些任务中明显提高性能，超过了传统的DTW方法。</p>
+
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        magisk
+        2023
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>

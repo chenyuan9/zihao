@@ -2,7 +2,7 @@
 title: "我与机器相互学习"
 author: "magisk"
 date: "2023-01-08"
-output: html_document
+output: md_document
 tags:
   - python
   - 深度学习

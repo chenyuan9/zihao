@@ -3,12 +3,54 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://example.com/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/painters/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/%E7%94%B5%E5%BD%B1/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/enblog/china-cannot-allow-jobless-young-to-lie-flat/</loc>
+    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/enblog/</loc>
+    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/report/</loc>
+    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/classical/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/hackers/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/shakespeare/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/</loc>
+    <lastmod>2023-07-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/photography/</loc>
     <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/painters/picture-show_1/</loc>
-    <lastmod>2023-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/painters/</loc>
     <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/painters/%E6%AF%95%E4%B8%9A/</loc>
@@ -17,13 +59,7 @@
     <loc>https://example.com/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</loc>
     <lastmod>2023-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/math/</loc>
-    <lastmod>2023-02-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://example.com/tags/sir-isaac-newton/</loc>
-    <lastmod>2023-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/tags/</loc>
     <lastmod>2023-02-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</loc>
@@ -37,9 +73,6 @@
   </url><url>
     <loc>https://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-02-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/hackers/</loc>
-    <lastmod>2023-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/tags/python/</loc>
     <lastmod>2023-01-08T00:00:00+00:00</lastmod>
@@ -55,6 +88,9 @@
   </url><url>
     <loc>https://example.com/about/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/math/</loc>
+    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</loc>
     <lastmod>2022-11-30T00:00:00+00:00</lastmod>
