@@ -5,16 +5,18 @@
   url = "/"
 
   [[main]]
-  name = "兰台 & Hackers"
+  name = "云门 & Painters"
   weight = 200
+  identifier = "painters"
+  url = "/painters/"
+  
+  
+  [[main]]
+  name = "兰台 & Hackers"
+  weight = 300
   identifier = "hackers"
   url = "/hackers/"
 
-  [[main]]
-  name = "云门 & Painters"
-  weight = 300
-  identifier = "painters"
-  url = "/painters/"
 
   [[main]]
   name = "en blog"

@@ -1,0 +1,10 @@
+---
+title: "It's the economy,stupid."
+author: "magisk"
+date: "2023-08-09"
+output: md_document
+---
+
+
+
+克林顿再竞选中对老布什说"It's the economy,stupid."
