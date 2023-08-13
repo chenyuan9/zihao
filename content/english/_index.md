@@ -5,11 +5,8 @@ author: magisk
 --
 --
 
-#### Hello, welcome to my website. I am a student studying probability and statistics.  
-#### I enjoy exploring various systems such as Android, Linux, and Windows.  
-#### Furthermore, I am also a lover of mathematics and photography.
-#### I will leave some of my study notes or reflections here.
-
+#### Welcome here and you can call me magisk. This is my blog, a space I've created to document my learning experiences and insights. I'm truly captivated by intricate and exquisite concepts, ranging from mathematics and physics to art and photography. Slightly enthusiastic about reading, one of my favorite sentence is:
+>     Laughter is an affect resulting from the sudden transformation of a heightened expectation into nothing.
 ## Thanks for visiting
 
 --
