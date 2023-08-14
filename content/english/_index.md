@@ -5,7 +5,7 @@ author: magisk
 --
 --
 
-#### Welcome into my blog and you can call me magisk.I love Linux, have an immense fondness for the game Hollow Knight and also enjoy listening to songs by Taylor.In short,I'm truly captivated by intricate and exquisite concepts, ranging from math and physics to art and photography. Slightly enthusiastic about reading, one of my favorite sentence is:
+#### Welcome into my blog and you can call me magisk.I love Linux, have an immense fondness for the game Hollow Knight and also enjoy listening to Taylor Swift.I'm truly captivated by intricate and exquisite concepts, ranging from math and physics to art and photography. Slightly enthusiastic about reading, one of my favorite sentence is:
 
 >     Laughter is an affect resulting from the sudden transformation of a heightened expectation into nothing.
 ## Thanks for visiting
