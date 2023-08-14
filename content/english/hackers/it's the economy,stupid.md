@@ -6,5 +6,3 @@ output: md_document
 ---
 
 
-
-克林顿再竞选中对老布什说"It's the economy,stupid."
