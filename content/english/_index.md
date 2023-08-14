@@ -21,5 +21,3 @@ author: magisk
 --
 --
 
-This file is named "云门 & Painters",some of my reflection will be recorded here.
-$$\downarrow$$
