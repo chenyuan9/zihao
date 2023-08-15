@@ -8,7 +8,7 @@ author: magisk
 #### Welcome into my blog and you can call me magisk.I love Linux, have an immense fondness for the game Hollow Knight and also enjoy listening to Taylor Swift.I'm truly captivated by intricate and exquisite concepts, ranging from math and physics to art and photography. Enthusiastic about reading, one of my favorite sentence is:
 
 >     Laughter is an affect resulting from the sudden transformation of a heightened expectation into nothing.
-## Thanks for visiting
+### Thanks for visiting
 
 --
 
@@ -16,7 +16,7 @@ author: magisk
 
 >     莫问天涯路几重，轻衫侧帽且从容。几回宿酒添新酒，长是晨钟待晚钟。    情转薄，意还浓。倩谁指点看芙蓉。行人尽说江南好，君在巫山第几峰。
 
-## 感谢访问
+### 感谢访问
 
 --
 --
