@@ -3,6 +3,8 @@ title: "『海街日记』－是枝裕和"
 author: "magisk"
 date: "2023-08-15"
 output: md_document
+tags: 
+  - 电影
 ---
 
 一些剧照：
