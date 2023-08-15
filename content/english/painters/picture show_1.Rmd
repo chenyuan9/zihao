@@ -22,8 +22,6 @@ tags:
 
 ![](/images/Nikon/picture_show1/DSC_1685.JPG)
 
-![](/images/Nikon/picture_show1/DSC_1546-3.JPG)
-
 ![](/images/Nikon/picture_show1/DSC_0010.JPG)
 
 ![](/images/Nikon/picture_show1/DSC_1676.JPG)
