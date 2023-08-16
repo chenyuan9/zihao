@@ -1,5 +1,7 @@
 ---
-author: magisk
+title: Homepage
+disable_math: true
+disable_highlight: true
 ---
 
 --
