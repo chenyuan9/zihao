@@ -1,7 +1,7 @@
 
 title = "I'm magisk"
 author = "magisk"
-#copyright = "2022-2023"
+#copyright = "magisk 2023"
 description = "Dropped into Catch-22."
 profilePicture = "images/profilezzz.jpg"
 keywords = ""
@@ -24,9 +24,9 @@ singleDateFormat = "2/1/2006"
 indexDateFormat = "2/1/2006"
 listDateFormat = "2/1/2006"
 # Commento Comments
-# CommentoURL = "https://commento.example.com/js/commento.js"
-# Read More links for truncated summaries
-# readMore = true
+#CommentoURL = "https://commento.example.com/js/commento.js"
+#Read More links for truncated summaries
+#readMore = true
 # postSectionName = "blog"
 # relatedPosts = true
 # numberOfRelatedPosts = 3
@@ -51,7 +51,7 @@ reversepagetitle = false # When set to 'true', the Window Title will be reversed
 ## Math settings
 [math]
 enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
-use = "katex"  # options: "katex", "mathjax". default is "katex".
+use = "mathjax"  # options: "katex", "mathjax". default is "katex".
 
 ## Social links
 # use 'fab' when brand icons, use 'fas' when standard solid icons.
@@ -87,16 +87,13 @@ url = "mailto:894473271xzy@gmail.com"
 [mermaid]
 enable = true
 
-[params]
-  enableGitalk = true
-
-[params.gitalk] 
+[gitalk] 
     clientID = "[6c271540221e5fff0847]" # Your client ID
-    clientSecret = "[ ee0b9ff755da90afd26f6bcc7fb93822304ae9fd]" # Your client secret
-    repo = "https://www.magiskxzy.cc" # The repo to store comments
+    clientSecret = "[22127164373ef8567f73314ba771b00fad734c2b]" # Your client secret
+    repo = "zihao" # The repo to store comments
     owner = "chenyuan9" # Your GitHub ID
     admin= "chenyuan9" # Required. GitHub repository owner and collaborators. (Users who having write access to this repository)
-    id= "https://www.magiskxzy.cc/about/" # The unique id of the page.
+    id= "https://www.magiskxzy.cc" # The unique id of the page.
     labels= "gitalk" # GitHub issue labels. If you used to use Gitment, you can change it
     perPage= 15 # Pagination size, with maximum 100.
     pagerDirection= "last" # Comment sorting direction, available values are 'last' and 'first'.
