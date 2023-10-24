@@ -27,3 +27,4 @@ related:
       weight: 80
   threshold: 80
   toLower: yes
+comment: gitalk
