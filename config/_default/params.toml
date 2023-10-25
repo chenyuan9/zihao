@@ -87,18 +87,6 @@ url = "mailto:894473271xzy@gmail.com"
 [mermaid]
 enable = true
 
-#[gitalk] 
-#    clientID = "[6c271540221e5fff0847]" # Your client ID
-#    clientSecret = "[22127164373ef8567f73314ba771b00fad734c2b]" # Your client secret
-#    repo = "chenyuan9/hugotalk" # The repo to store comments
-#    owner = "chenyuan9" # Your GitHub ID
-#    admin= "chenyuan9" # Required. GitHub repository owner and collaborators. (Users who having write access to this repository)
-#    id= "https://www.magiskxzy.cc" # The unique id of the page.
-#    labels= "" # GitHub issue labels. If you used to use Gitment, you can change it
-#    perPage= 15 # Pagination size, with maximum 100.
-#    pagerDirection= "last" # Comment sorting direction, available values are 'last' and 'first'.
-#    createIssueManually= true # If it is 'false', it is auto to make a GitHub issue when the administrators login.
-#    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
 
 
 [utterances]
