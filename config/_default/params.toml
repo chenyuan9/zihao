@@ -24,7 +24,7 @@ singleDateFormat = "2/1/2006"
 indexDateFormat = "2/1/2006"
 listDateFormat = "2/1/2006"
 # Commento Comments
-CommentoURL = "https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"
+# CommentoURL = "https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"
 #Read More links for truncated summaries
 #readMore = true
 # postSectionName = "blog"
@@ -101,7 +101,7 @@ enable = true
 #    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
 
 
-[params.utteranc]
+[utterances]
   enable = true
   repo="chenyuan9/zihao"
   issue-term="pathname"
