@@ -66,6 +66,13 @@
         {{- partial "mermaid.html" . -}}
       {{- end -}}
     </div>
+      <script src="https://utteranc.es/client.js"
+        repo="chenyuan9/zihao"
+        issue-term="title"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+      </script>
     <div class="post__footer">
       {{ with .Page.Params.Categories }}
         {{ partial "taxonomy/categories.html" . }}
