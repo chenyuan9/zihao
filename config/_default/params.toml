@@ -10,7 +10,7 @@ favicon = "favicons/"
 customCss = []
 # example ["js/custom.js"]
 customJs = [] 
-mainSections = ["painters"]
+mainSections = ["iridescent"]
 #images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
 # Form Spree Contact Form
@@ -85,7 +85,7 @@ url = "mailto:894473271xzy@gmail.com"
 
 
 [mermaid]
-enable = true
+# enable = true
 
 
 
