@@ -4,7 +4,7 @@ author: "magisk"
 date: "2023-07-20"
 output: md_document
 tags:
-  - 电影
+  - movie
 thumbnail: "/images/情书－岩井俊二/Snipaste_2023-10-26_15-44-05.png"
 ---
 
