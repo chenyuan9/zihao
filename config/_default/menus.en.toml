@@ -5,28 +5,32 @@
   url = "/"
 
   [[main]]
-  name = "云门 & Painters"
+  name = "Painters"
   weight = 200
   identifier = "painters"
   url = "/painters/"
   
-  
   [[main]]
-  name = "兰台 & Hackers"
+  name = "Hackers"
   weight = 300
   identifier = "hackers"
   url = "/hackers/"
 
+  [[main]]
+  name = "Iridescent"
+  weight = 400
+  identifier = "Iridescent"
+  url = "/Iridescent/"
 
   [[main]]
   name = "en blog"
-  weight = 400
+  weight = 500
   identifier = "en blog"
   url = "/enblog/"
   
    [[main]]
   name = "about"
-  weight = 500
+  weight = 600
   identifier = "about"
   url = "/about/"
   

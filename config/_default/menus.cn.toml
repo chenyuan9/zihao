@@ -1,0 +1,42 @@
+  [[main]]
+  name = "主页"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[main]]
+  name = "云门"
+  weight = 200
+  identifier = "painters"
+  url = "/painters/"
+  
+  
+  [[main]]
+  name = "兰台"
+  weight = 300
+  identifier = "hackers"
+  url = "/hackers/"
+
+   [[main]]
+  name = "遐园"
+  weight = 400
+  identifier = "Iridescent"
+  url = "/Iridescent/"
+
+  [[main]]
+  name = "英文博客"
+  weight = 500
+  identifier = "en blog"
+  url = "/enblog/"
+  
+   [[main]]
+  name = "关于"
+  weight = 600
+  identifier = "about"
+  url = "/about/"
+  
+  [[footer]]
+  name = "迹"
+  weight = 1
+  identifier = "imprint"
+  url = "/imprint/"
