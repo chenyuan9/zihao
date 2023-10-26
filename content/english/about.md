@@ -29,7 +29,7 @@ title: About
 #### 我喜欢的博主们 ╭☞( ￣ ▽￣)╭☞
 (注：以下链接皆为单向链接)
 
-－[谢益辉](https://yihui.org/):一个很有趣的大佬，blogdown等一系列R包的创始人。
+－[谢益辉](https://yihui.org/):统计系前辈，一个很有趣的大佬，blogdown等一系列R包的创始人。
 
 －[陶哲轩](https://terrytao.wordpress.com/):大概都懂，毕竟菲尔兹奖得主。
 
