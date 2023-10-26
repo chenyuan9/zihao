@@ -8,5 +8,5 @@ aliases:
 author: Hugo Authors
 tags:
 - index
-title: Posts
+title: Hackers
 ---
