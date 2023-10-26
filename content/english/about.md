@@ -41,3 +41,5 @@ title: About
 －[袁凡](https://yuanfan.rbind.io/):能在很多其他人的博客下看到他的评论。
 
 －[钗钗](https://www.boyilu.com/):一个文笔超级好的女生。
+
+－[Bruno Rodrigues](https://www.brodrigues.co/):Econometrics and Free Software.
