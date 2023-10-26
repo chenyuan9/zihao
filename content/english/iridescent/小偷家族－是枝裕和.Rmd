@@ -5,7 +5,7 @@ date: "2023-07-21"
 output: md_document
 tags: 
   - 电影
-thumbnail: ""
+thumbnail: "/images/小偷家族－是枝裕和/Snipaste_2023-10-26_15-58-05.png"
 ---
 
 <!--more-->
