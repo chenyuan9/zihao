@@ -5,6 +5,7 @@ date: "2023-08-15"
 output: md_document
 tags: 
   - 电影
+thumbnail: "/images/海街日记－是枝裕和/Snipaste_2023-10-26_16-11-02.png/"
 ---
 
 <!--more-->
