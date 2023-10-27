@@ -19,7 +19,7 @@ doNotLoadAnimations = false
 # Google Fonts
 #googleFonts = ["Indie+Flower", "Roboto:ital,wght@0,100;0,400;0,700;1,400"]
 # Google Site Verify
-#googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+googleSiteVerify = "fm_Qww8iGFoVcx5ReYYjFixW9ozUJaW7XQkF9R9syEs"
 singleDateFormat = "2/1/2006"
 indexDateFormat = "2/1/2006"
 listDateFormat = "2/1/2006"
