@@ -89,9 +89,9 @@ url = "mailto:894473271xzy@gmail.com"
 
 
 
-[utterances]
-  enable = true
-  repo="chenyuan9/zihao"
-  issue-term="pathname"
-  theme="gruvbox-dark"
-  crossorigin="anonymous"
+#[utterances]
+#  enable = true
+#  repo="chenyuan9/zihao"
+#  issue-term="pathname"
+#  theme="gruvbox-dark"
+#  crossorigin="anonymous"
