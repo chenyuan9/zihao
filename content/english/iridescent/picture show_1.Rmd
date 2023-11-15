@@ -1,5 +1,5 @@
 ---
-title: "picture show_1"
+title: "Photography_1"
 author: "magisk"
 date: "2023-07-18"
 output: md_document
