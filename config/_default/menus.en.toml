@@ -17,10 +17,10 @@
   url = "/hackers/"
 
   [[main]]
-  name = "Iridescent"
+  name = "Iris"
   weight = 400
-  identifier = "Iridescent"
-  url = "/Iridescent/"
+  identifier = "Iris"
+  url = "/Iris/"
 
   [[main]]
   name = "en blog"
