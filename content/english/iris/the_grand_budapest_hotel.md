@@ -19,8 +19,6 @@ tags:
 
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_21-23-15.png)
 
-![](/images/布达佩斯大饭店/Snipaste_2023-12-15_21-23-15.png)
-
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_21-24-54.png)
 
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_21-25-17.png)
@@ -37,7 +35,7 @@ tags:
 
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_21-58-04.png)
 
-![](/images/布达佩斯大饭店/Snipaste_2023-12-15_22-08-44.png)
+![](/images/布达佩斯大饭店/Screenshot 2023-12-16 120845.png)
 
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_22-14-14.png)
 
