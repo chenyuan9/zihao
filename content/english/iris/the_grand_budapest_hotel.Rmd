@@ -35,7 +35,7 @@ tags:
 
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_21-58-04.png)
 
-![](/images/布达佩斯大饭店/Screenshot 2023-12-16 120845.png)
+![](/images/布达佩斯大饭店/Screenshot%202023-12-16%20120845.png)
 
 ![](/images/布达佩斯大饭店/Snipaste_2023-12-15_22-14-14.png)
 
