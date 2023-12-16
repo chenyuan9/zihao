@@ -3,6 +3,8 @@ title: "『布达佩斯大饭店』－韦斯·安德森"
 author: "magisk"
 date: "2023-12-16"
 output: md_document
+tags:
+  - movie
 ---
 
 <!--more-->
