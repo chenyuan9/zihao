@@ -3,10 +3,10 @@ title: "『边缘』"
 author: "magisk"
 date: "2024-01-09"
 output: html_document
+thumbnail: "images/landscape.jpg"
 tags: 
   - photograhy
 ---
-
 
 <!--more-->
 
@@ -36,8 +36,7 @@ tags:
 
 ![](/images/margin/DSC_0073-3.JPG)
 
-![](/images/margin/DSC_0075-4.JPG) 
-咳咳咳，玉足(\\害羞脸)
+![](/images/margin/DSC_0075-4.JPG) 咳咳咳，玉足(\\害羞脸)
 
 ![](/images/margin/DSC_0083-6.JPG)
 
