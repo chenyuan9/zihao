@@ -3,7 +3,12 @@ title: "『边缘』"
 author: "magisk"
 date: "2024-01-09"
 output: html_document
+tags: 
+  - photograhy
 ---
+
+
+<!--more-->
 
 在某个未睡的清晨，看了一眼窗外渐明的天色，"蓝调时间"好像快到了！我拿起相机向屋外走去，等待不多时之后的天气仿佛更像"灰调"......(武汉起雾霾了(T-T))
 
@@ -20,6 +25,8 @@ output: html_document
 ![](/images/margin/DSC_0137-6.JPG)
 
 ![](/images/margin/DSC_0141-7.JPG)
+
+### 有关一只猫
 
 天公不作美，只好回到屋子里拍拍室友的猫了。猫似乎不太喜欢相机的快门声，手机的相机是变焦，我自己又不太行了，唉，只好浅浅尝试几张。
 
