@@ -23,4 +23,3 @@ disable_highlight: true
 -------
 -------
 
-$$\Downarrow$$
