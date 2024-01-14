@@ -5,7 +5,7 @@ date: "2024-01-09"
 output: html_document
 thumbnail: "images/landscape.jpg"
 tags: 
-  - photograhy
+  - photography
 ---
 
 <!--more-->
