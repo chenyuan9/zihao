@@ -23,4 +23,4 @@ disable_highlight: true
 -------
 -------
 
-$$\downarrow$$
+$$\Downarrow$$
