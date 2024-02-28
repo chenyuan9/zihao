@@ -3,6 +3,10 @@ title: "野心家"
 author: "magisk"
 date: "2024-02-24"
 output: html_document
+tags: 
+  - movie
+  - story
+thumbnail: "images/israel-holtzhausen-voldemort-nagini.jpg"
 ---
 
 <!--more-->
