@@ -3,7 +3,7 @@ title: "『轻舞』"
 author: "magisk"
 date: "2024-04-06"
 output: html_document
-thumbnail: "images/landscape.jpg"
+thumbnail: "images/Screenshot_use.png"
 tags: 
   - photography
 ---
