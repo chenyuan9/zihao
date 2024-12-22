@@ -16,22 +16,16 @@
   weight = 300
   identifier = "hackers"
   url = "/hackers/"
-
-   [[main]]
+  
+  [[main]]
   name = "遐园"
   weight = 400
-  identifier = "Iris"
-  url = "/Iris/"
+  identifier = "iris"
+  url = "/iris/"
 
-  [[main]]
-  name = "英文博客"
-  weight = 500
-  identifier = "en blog"
-  url = "/enblog/"
-  
    [[main]]
   name = "关于"
-  weight = 600
+  weight = 500
   identifier = "about"
   url = "/about/"
   
