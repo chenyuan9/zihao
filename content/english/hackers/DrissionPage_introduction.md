@@ -24,13 +24,13 @@ DrissionPag设计初衷，是将request和Selenium两种数据获取的方式合
 
 DrissionPage项目地址：<https://github.com/g1879/DrissionPage>
 
-下面使用我自己爬取京东用户评论的例子，介绍一下DrissionPage的基础使用方法，第一步就是安装DrissionPage库到自己的电脑环境中。下载方式很简单，直接在cmd窗口调用pip下载即可：
+下面使用我自己爬取京东商品评论的例子，介绍一下DrissionPage的基础使用方法，第一步就是安装DrissionPage库到自己的电脑环境中。下载方式很简单，直接在cmd窗口调用pip下载即可：
 
 ```         
 pip install DrissionPage
 ```
 
-接下来，DrissionPage给予了使用者两个选择，一是可以使用SessionPage发送和接收数据包（SessionPage基于Python requests库实现，本质是一个增强版的Session对象），二是使用ChromiumPage启动浏览器模仿用户操作（ChromiumPage 基于Chrome DevTools Protocol实现，直接与浏览器内核通信，不依赖Selenium）。我在爬取京东评论的过程中使用的 ChromiumPage。
+接下来，DrissionPage给予了使用者两个选择，一是可以使用SessionPage发送和接收数据包（SessionPage基于Python requests库实现，本质是一个增强版的Session对象），二是使用ChromiumPage启动浏览器模仿用户操作（ChromiumPage 基于Chrome DevTools Protocol实现，直接与浏览器内核通信，不依赖Selenium）。我在爬取京东商品评论的过程中使用的 ChromiumPage。
 
 具体的操作如下：
 
@@ -74,3 +74,58 @@ print(json_data)
 [DrissionPageを使ってみる](https://note.com/valnd_/n/n9667875f1fc3)
 
 [DrissionPage 1.6.0 Project description](https://pypi.org/project/DrissionPage/1.6.0/)
+
+**特别鸣谢制作DrissionPage库的g1879大佬**（鞠躬鞠躬）
+
+一下附上爬取京东商品评论的全部代码，仅作参考：
+
+```
+#### 注意本篇爬取数据没有去除换行符“/n”
+from DrissionPage import ChromiumPage
+import csv
+import time
+import random
+
+# 创建文件对象
+f = open('data_for_鲜鸡蛋.csv',mode='w',encoding='utf-8-sig',newline='')
+# 字典写入方法
+csv_writer = csv.DictWriter(f,fieldnames=['昵称','日期','地区','产品名称','评分','评论'])
+csv_writer.writeheader()
+# 实例化浏览器对象
+driver_JD = ChromiumPage()
+
+# 数据包地址：https://api.m.jd.com/
+# 监听数据包
+driver_JD.listen.start('https://api.m.jd.com/?appid=item-v3&functionId=pc_club_productPageComments')
+# 访问网站
+driver_JD.get('https://item.jd.com/100051210211.html')
+# 点击查看评论数据
+driver_JD.ele('css:#detail > div.tab-main.large > ul > li:nth-child(5)').click()
+for page in range(1,1000):
+    time.sleep(random.uniform(5, 7))  # 随机等待2-5秒
+    print(f'正在采集第{page}页的数据内容')
+    # #下滑页面到底部
+    # driver_JD.scroll.to_bottom()
+    # 等待数据包加载
+    resp = driver_JD.listen.wait()
+    # 获取响应数据
+    json_JDdata = resp.response.body
+    # 提取评论所在列表
+    comments_jd = json_JDdata['comments']
+
+    for index in comments_jd:
+        ip_label = index.get('location', None) #ip地址
+        # 提取具体评论信息
+        dit = {
+            '昵称':index['nickname'],
+            '日期':index['creationTime'],
+            '地区':ip_label,
+            '产品名称':index['productColor'],
+            '评分': index['score'],
+            '评论':index['content'],
+        }
+        csv_writer.writerow(dit)
+        print(dit)
+    # 点击下一页按钮
+    driver_JD.ele('css:.ui-pager-next',index = 1).click()
+```
