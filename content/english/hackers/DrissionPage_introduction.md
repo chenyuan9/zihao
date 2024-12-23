@@ -1,5 +1,5 @@
 ---
-title: "一种爬虫的新方式"
+title: "使用DrissionPage爬虫的方法"
 output: html_document
 date: "2024-12-23"
 output: md_document
