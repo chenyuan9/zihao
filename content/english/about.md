@@ -39,4 +39,4 @@ title: About
 
 －[Bruno Rodrigues](https://www.brodrigues.co/):Econometrics and Free Software.
 
-－[WeFun](https://wefun0454.github.io/):我的一个私人朋友。
+－[WeFun](https://wefun0454.github.io/):我的一个私人朋友，未来的生物学大佬。
