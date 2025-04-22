@@ -38,3 +38,5 @@ title: About
 －[钗钗](https://www.boyilu.com/):一个文笔超级好的女生。
 
 －[Bruno Rodrigues](https://www.brodrigues.co/):Econometrics and Free Software.
+
+- [WeFun](https://wefun0454.github.io/):我的一个私人朋友。
