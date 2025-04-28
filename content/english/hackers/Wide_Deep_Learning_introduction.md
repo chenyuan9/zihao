@@ -3,9 +3,10 @@ title: "抖音推荐算法之Wide & Deep Learning"
 output: html_document
 date: "2025-04-28"
 tags:
-  - 深度学习
+  - Deep learning
   - 推荐算法
   - 抖音
+  - TikTok
 ---
 
 近期，抖音在北京举行的“安全与信任中心开放日”上公开了抖音APP的算法推荐机制及原理，并将其大致内容摘取出来放在了抖音自建的安全与信任中心的“信息公开”部分:[抖音推荐算法公开链接](https://95152.douyin.com/article/15358)。
