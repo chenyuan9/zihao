@@ -122,3 +122,20 @@ Wide & Deep Learning模型结合了记忆与泛化的优点，既能精准捕捉
 
 抖音作为一个商用平台在短视频APP中的使用体验冠绝全球，这与其强大的推荐算法离不开关系，仅在安全与信任中心的“信息公开”部分就披露了多种模型算法的联合使用。由此可以观察到，抖音推荐系统并非依赖单一模型，而是通过多阶段模型协同推送。并且抖音虽说将诸如Wide&Deep Learning之类的推荐算法进行公开示例，但并未说明其具体使用参数、具体推送视频的调用算法流程以及对原有模型做出了何种改进，实际应用中调整模型参数、推荐算法改进程度之类的细节操作也同样是及其重要的一环。因此，本文仅作学习者与爱好者的参考之用。
 
+## <center>参考的文献、博客与视频</center>
+
+[Wide & Deep Learning for Recommender Systems](https://arxiv.org/abs/1606.07792v1)
+
+[深入广泛学习：使用TensorFlow来记忆和归纳](https://www.youtube.com/watch?v=NV1tkZ9Lq48)
+
+[Wide & Deep Learning with TensorFlow - Machine Learning](https://www.youtube.com/watch?v=Xmw9SWJ0L50)
+
+[Wide &amp; Deep Learning: Better Together with TensorFlow](https://research.google/blog/wide-amp-deep-learning-better-together-with-tensorflow/)
+
+[见微知著，你真的搞懂Google的Wide&Deep模型了吗？](https://cloud.tencent.com/developer/article/1636190)
+
+[谷歌推出 Wide Deep Learning，开源 TensorFlow API](https://cloud.tencent.com/developer/article/1070675)
+
+[ReLU激活函数有什么样的特点和优势](https://www.youtube.com/watch?v=RhOVOgNl6Bw)
+
+[随机梯度下降如何帮助深度学习找到泛化能力强的解](https://cqb.pku.edu.cn/tanglab/info/1005/2246.htm)
