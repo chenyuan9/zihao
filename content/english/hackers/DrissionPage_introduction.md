@@ -26,7 +26,7 @@ DrissionPage项目地址：<https://github.com/g1879/DrissionPage>
 
 下面使用我自己爬取京东商品评论的例子，介绍一下DrissionPage的基础使用方法，第一步就是安装DrissionPage库到自己的电脑环境中。下载方式很简单，直接在cmd窗口调用pip下载即可：
 
-```         
+```python
 pip install DrissionPage
 ```
 
@@ -34,7 +34,7 @@ pip install DrissionPage
 
 具体的操作如下：
 
-```         
+```python
 # 导入DrissionPage库中的ChromiumPage包
 from DrissionPage import ChromiumPage
 
@@ -44,7 +44,7 @@ driver_car = ChromiumPage()
 
 上述步骤之后，就需要一点html的基础知识来帮助你找到数据包的地址。
 
-```         
+```python     
 # 以京东为例，数据包地址：https://api.m.jd.com/
 
 # 监听数据包
@@ -61,7 +61,7 @@ json_data = resp.response.body
 
 为了更为细致的发掘请求体所包含的数据和本文最需要的商品评论数据,可以将请求体打印出来观察：
 
-```         
+```python
 print(json_data)
 ```
 
@@ -79,7 +79,7 @@ print(json_data)
 
 以下附上爬取京东商品评论的全部代码，仅作参考：
 
-```
+```python
 #### 注意本篇爬取数据没有去除换行符“/n”
 from DrissionPage import ChromiumPage
 import csv
