@@ -9,7 +9,7 @@ disable_highlight: true
 
 ####       Welcome into my blog and you can call me magisk.I love Linux, have an immense fondness for the game Hollow Knight and also enjoy listening to Taylor Swift.I'm truly captivated by intricate and exquisite concepts, ranging from math and physics to art and photography. Enthusiastic about reading, one of my favorite sentence is:
 
-> <center>Laughter is an affect resulting from the sudden transformation of a heightened expectation into nothing.</center>
+> <center>Laughter is an affect resulting from the sudden transformation of <br> a heightened expectation into nothing.</center>
 
 --(๑´ㅂ`๑)ŧ‹"ŧ‹"
 --
@@ -23,14 +23,14 @@ disable_highlight: true
 
 ####       Hallo und willkommen auf Magisk-Homepage!Ich bin ein Student der Wahrscheinlichkeitstheorie und Statistik und habe eine große Leidenschaft für die deutsche Sprache und Kultur. Ich bin ein treuer Fan von Hesse und Zweig. Außerdem interessiere ich mich für komplexe und schöne Theorien und Dinge wie Mathematik und Physik, Philosophie und Kunst, Film und Fotografie, aber auch fürs Faulenzen und Handy spielen.Android ist mein Favorit - ich habe Erfahrung mit Windows-Virtualisierung und Linux-Servern und kann alte Tablets reparieren sowie gebrauchte Kameras aufarbeiten.Mein Lieblingszitat stammt von Wittgenstein: 
 
-> <center>Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt.</center>
+> <center>Die Grenzen meiner Sprache bedeuten <br>die Grenzen meiner Welt.</center>
 
 --Σ(¯ᐞ´(ω•´ )ｶﾞﾌﾞｯ
 --
 
 ####       はじめまして！magiskのホームページへようこそ。私は確率統計を学ぶ学生で、日本の漫画の大ファンでもあります。『葬送のフリーレン』、『鋼の錬金術師』、そして『ワンピース』は素晴らしい漫画作品だと思います。また、複雑で美しい理論や物事にも魅力を感じます。例えば、数学や物理学、哲学や芸術、映画や写真、そしてゴロゴロしながらスマホをいじることも好きです。私の好きな言葉は：
 
-> <center>人間の心には互に矛盾した二つの感情がある。勿論、誰でも他人の不幸に同情しない者はない。所がその人がその不幸を、どうにかして切りぬける事が出来ると、今度はこっちで何となく物足りないような心もちがする。</center>
+> <center>人間の心には互に矛盾した二つの感情がある。勿論、誰でも他人の不幸に同情しない者はない。<br>所がその人がその不幸を、どうにかして切りぬける事が出来ると、今度はこっちで何となく物足りないような心もちがする。</center>
 
 -------
 -------
