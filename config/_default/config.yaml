@@ -29,3 +29,6 @@ related:
       weight: 80
   threshold: 80
   toLower: yes
+output:
+  blogdown::html_page:   # 或 blogdown::html_document2
+    toc: false
