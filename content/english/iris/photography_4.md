@@ -8,9 +8,9 @@ tags:
   - photography
 ---
 
-<!--more-->
+这是一些在年初拍摄的照片，过了很久才打开相机看到...
 
-这是一些在年初拍摄的照片，过了很久才打开相机看到。
+<!--more-->
 
 ![](/images/Nikon/picture_show4/DSC_0336.jpg)
 

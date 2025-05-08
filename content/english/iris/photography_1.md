@@ -7,6 +7,9 @@ thumbnail: "images/landscape.jpg"
 tags:
   - photography
 ---
+曾经的校园生活，一些当时的摄影练习。
+
+<!--more-->
 
 ![](/images/Nikon/picture_show1/DSC_1552-3.JPG)
 
