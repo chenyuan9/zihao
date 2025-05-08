@@ -5,6 +5,7 @@ date: "2023-07-20"
 output: word_document
 ---
 
+<!--more-->
 ["soft-DTW：a Differentiable Loss Function for Time-Series"](https://arxiv.org/pdf/1703.01541v2.pdf)原文下载
 
 ## 翻译
