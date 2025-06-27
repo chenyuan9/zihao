@@ -2,6 +2,9 @@
 title: "悉达多寻找悉达多"
 output: html_document
 date: "2025-06-27"
+output: md_document
+tags: 
+  - 札记
 ---
 
 > <center>在此，在熵之国度的消逝者中，</center> 
