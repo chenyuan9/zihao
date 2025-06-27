@@ -1,7 +1,7 @@
 ---
 title: "悉达多寻找悉达多"
 output: html_document
-date: "2025-04-30"
+date: "2025-06-27"
 ---
 
 > <center>在此，在熵之国度的消逝者中，</center> 
