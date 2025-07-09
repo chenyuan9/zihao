@@ -1,6 +1,5 @@
 ---
 title: "基于DrissionPage的爬虫方法"
-output: html_document
 date: "2024-12-23"
 output: md_document
 tags:
