@@ -1,5 +1,5 @@
 ---
-title: "『旅行之木』--南昌"
+title: "『旅行之木』"
 author: "magisk"
 date: "2024-12-22"
 output: html_document
@@ -7,10 +7,10 @@ thumbnail: "images/landscape.jpg"
 tags: 
   - photography
 ---
-
-整理一下十一假期去到南昌和朋友玩的时候拍的照片。
-
+为什么会出现显示错误
 <!--more-->
+
+以下是十一假期去到南昌和朋友玩的时候拍的照片。
 
 ### 滕王阁
 
