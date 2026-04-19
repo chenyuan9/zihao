@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>index on Magisk&#39;s Blog</title>
-    <link>https://example.com/tags/index/</link>
-    <description>Recent content in index on Magisk&#39;s Blog</description>
+    <title>index on Magisk</title>
+    <link>https://magiskxzy.org/tags/index/</link>
+    <description>Recent content in index on Magisk</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://example.com/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://magiskxzy.org/tags/index/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Posts</title>
-      <link>https://example.com/hackers/</link>
-      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      <title>Hackers</title>
+      <link>https://magiskxzy.org/hackers/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/hackers/</guid>
+      <guid>https://magiskxzy.org/hackers/</guid>
       
         <description></description>
       

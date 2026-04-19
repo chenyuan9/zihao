@@ -1,62 +1,167 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portfolio on Magisk&#39;s Blog</title>
-    <link>https://example.com/painters/</link>
-    <description>Recent content in Portfolio on Magisk&#39;s Blog</description>
+    <title>Portfolio on Magisk</title>
+    <link>https://magiskxzy.org/painters/</link>
+    <description>Recent content in Portfolio on Magisk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/painters/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/painters/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>『致命魔术』－诺兰</title>
-      <link>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</link>
-      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <title>聊聊跑步吧</title>
+      <link>https://magiskxzy.org/painters/runblog_preface/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</guid>
+      <guid>https://magiskxzy.org/painters/runblog_preface/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>『小偷家族』－是枝裕和</title>
-      <link>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</link>
-      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      <title>悉达多寻找悉达多</title>
+      <link>https://magiskxzy.org/painters/traversal/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</guid>
+      <guid>https://magiskxzy.org/painters/traversal/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;center&gt;在此，在熵之国度的消逝者中，&lt;/center&gt; 
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;做一只鸣响的杯子，在鸣响时破碎。&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;去存在———于此同时洞悉&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;非存在的暗示， 以及你内心感应的无限根基，&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;于是你能圆满完成它们，仅此一次......&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h5 id=&#34;p-alignright---楔子p&#34;&gt;&lt;p align=&#34;right&#34;&gt;&amp;mdash;楔子&lt;/p&gt;&lt;/h5&gt;
+&lt;/blockquote&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>博客域名更换为magiskxzy.org</title>
+      <link>https://magiskxzy.org/painters/domain_deprecation/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/domain_deprecation/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>『情书』－岩井俊二</title>
-      <link>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</link>
+      <title>练跑计划</title>
+      <link>https://magiskxzy.org/painters/training_plan/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/training_plan/</guid>
+      
+        <description>硬盘到货了，需要学习一下硬盘的检测和性能参数了。因为已经报名了12月1日的马拉松健康跑，所以最近两天都在练跑，10月15号第一次跑，1h、6公里；16号第二天，1h30m、9公里。
+下面会制定一下锻炼的计划，因为我参加比赛的目的一是为了白嫖老板的五十块，因为他说参赛的费用可以报销，二是为了增加身体的掌控能力，因为长时间的不运动身体已经很懈怠了，所以锻炼计划里不会只有跑步：第一阶段是体能恢复阶段，第二阶段是体能加强阶段。
+第一阶段（10月15日~11月1日），最终目标是8公里/h、70个俯卧撑/日。
+第二阶段（11月2日~11月31日），最终目标是10公里的平均速度在6min/公里以内，120个俯卧撑/日。</description>
+      
+    </item>
+    
+    <item>
+      <title>买了一块固态硬盘</title>
+      <link>https://magiskxzy.org/painters/bought_a_drive/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/bought_a_drive/</guid>
+      
+        <description>其实近来发生了很多事情，我也曾动过很多次写博客的念头，但却总是因为拖延症一延再延。我想我必须花一些时间来整理自己的思绪、笔记和照片了，所以就从现在开始吧。
+十月伊始，各大购物平台就进入了双十一的预热，这倒真是有些让人哭笑不得的，毕竟提前一个月预热的购物街仿佛办的比春节中秋还要热闹，并且在各种软件的开屏页自动跳转京东淘宝是一件很让人讨厌的事情。于是我看到了固态硬盘的降价，这是硬盘继23年之后难得的降价，即使没有当时那么大力度的折扣，我也有些心动了，并且随手挑了一块三星990EP的2T版买了，这个固态没有缓外（其实也不太懂缓外的作用）。主要目的是有点战未来的想法，未来想组一个硬盘阵，或者NAS，之前买过一年的阿里云盘SVIP，但是后来被阿里云本地挂载限速、背刺SVIP等操作恶心到了，以后是再也不想买云盘的会员了，所以本地存储在我看来是很好的选择。后续我会多查一下有关硬盘性能的知识。
+另一个是老板想鼓励大家去参加青山区马拉松的健康跑，报销报名费、路费和餐费，嗯~ o(￣▽￣)o这不得抓住机会薅个羊毛，12月初开赛、全程8.5公里，虽然比起半马挑战性小了很多，但是大学生等于半个老年人的公式我还是记得的hhh。明天就抓紧练习吧。并且，这也意味着我要在这个公司待到12月，无妨，闲着多学一些，为明年开春做准备吧。
+混乱中取胜的要义就是清晰。</description>
+      
+    </item>
+    
+    <item>
+      <title>名字的第一个字母已经念出</title>
+      <link>https://magiskxzy.org/painters/the_first_letter_of_name/</link>
+      <pubDate>Sun, 26 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/the_first_letter_of_name/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>此时此地</title>
+      <link>https://magiskxzy.org/painters/now-here/</link>
+      <pubDate>Sat, 06 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/now-here/</guid>
+      
+        <description>杂乱无章的躺在门口的三个铁质皱纸团、一个被切去面部的金属头、一个禁止符号，这些摆在门口的物件无不吸引着我进入这座美术馆，理由很充分了，但还不必要。但很快上天便将这个必要条件送到了我面前 &amp;ndash; 是一个&amp;quot;过度拟合&amp;quot;的艺术展名字，梢上这是加班又无任务的一天。
+我做决定向来很快，早上的想法，中午午休便出发了。我很快便看完了一楼，因为一楼在装修，只剩一些清明假期未开门的咖啡店招徕客人的书架里的书，品类都对我没有什么吸引力。楼梯间的路标上写着&amp;quot;二楼&amp;quot;、&amp;ldquo;过度拟合&amp;rdquo;，我赶上二楼，看完了一则序和一则跋，看到的却是把树莓派放进画框里、把矿石放到显微镜下的作品，我理解作者想要用这些理工科的代表物代表时代的发展，但我实在想不出这些和&amp;quot;过度拟合&amp;quot;的主题有什么联系，尤其是&amp;quot;过度&amp;quot;两字。继续往上，第三层的展品看完之后我有些不适感。并非在作品中出现了裸体、血腥，而是三层的作品仿佛都是在恶搞，在我的感觉里第三层的&amp;quot;未来&amp;quot;跟宇航员是必然挂钩的，几乎每幅作品都会有宇航员这个意象，而为了表达新意，于是便将宇航员进行各种杂糅，但在我看来只是创造力贫瘠的表现，各种怪异动作的强行附加让我没有觉得这是一件艺术品，而是恶搞，并且我也不认为这属于解构。或许只是我固执的认为恶搞不同于解构，但三楼的展品，我并不喜欢。
+就在已有去意的时候发现还有负一楼，来都来了，也就抱着无所谓的态度去转一转吧。&amp;ldquo;呼吸&amp;quot;是我在那里最先记住的词语，推荐序的作者是和&amp;quot;过度拟合&amp;quot;推荐者是同一人，文笔一般。这层的展品用三个短片征服了我，尤其是第三支影片临近结束时那段酷似卓别林的定格，我可以很确定，导演在讨论很现实的问题，有关女性主义、有关每一个劳动者的权益。导演仿佛在用那不断变化的形体和脸部强调，影片的主角可以是每一个人，我们不要逃避，也无法逃避。三支影片在三个放映室，这之间的距离放了很多这导演的摄影作品，拍的极好，色彩舒适，主体明确，是我在此时、此地可以感同身受的作品。临走前，我记住了作者的名字，他叫侯帅。
+后来啊，我也在想，曾几何时我也是一个疯狂热爱浪漫主义的人，那些天马行空的、不沾烟火的也是我曾喜欢的。念着&amp;quot;自信人生两百年、会当击水三千里&amp;rdquo;、&amp;ldquo;春来我不先开口，哪个虫儿敢作声&amp;quot;热血澎湃，</description>
+      
+    </item>
+    
+    <item>
+      <title>野心家</title>
+      <link>https://magiskxzy.org/painters/aspirant/</link>
+      <pubDate>Sat, 24 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/aspirant/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>不灭恶龙与英雄登场</title>
+      <link>https://magiskxzy.org/painters/justice-and-benefit/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/justice-and-benefit/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>酒旗风暖少年狂</title>
+      <link>https://magiskxzy.org/painters/%E9%85%92%E6%97%97%E9%A3%8E%E6%9A%96%E5%B0%91%E5%B9%B4%E7%8B%82/</link>
+      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/%E9%85%92%E6%97%97%E9%A3%8E%E6%9A%96%E5%B0%91%E5%B9%B4%E7%8B%82/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>我怎能把你比作夏天</title>
+      <link>https://magiskxzy.org/painters/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</link>
       <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</guid>
       
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>picture show_1</title>
-      <link>https://example.com/painters/picture-show_1/</link>
-      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/painters/picture-show_1/</guid>
-      
-        <description></description>
+        <description>莎士比亚十四行诗第18首
+Shall I compare thee to a summer&amp;rsquo;s day?
+Thou art more lovely and more temperate:</description>
       
     </item>
     
     <item>
       <title>毕业</title>
-      <link>https://example.com/painters/%E6%AF%95%E4%B8%9A/</link>
+      <link>https://magiskxzy.org/painters/%E6%AF%95%E4%B8%9A/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%AF%95%E4%B8%9A/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%AF%95%E4%B8%9A/</guid>
       
         <description>&lt;p&gt;This is the dedication part of my graduation thesis.&lt;/p&gt;</description>
       
@@ -64,10 +169,10 @@
     
     <item>
       <title>揭谛揭谛，波罗揭谛</title>
-      <link>https://example.com/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</link>
+      <link>https://magiskxzy.org/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</link>
       <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</guid>
       
         <description>&lt;p&gt;I seem to be trapped.&lt;/p&gt;</description>
       
@@ -75,10 +180,10 @@
     
     <item>
       <title>致人杰</title>
-      <link>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</link>
+      <link>https://magiskxzy.org/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</link>
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</guid>
+      <guid>https://magiskxzy.org/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</guid>
       
         <description>Make a record of a poem that Edmond Halley wrote for Newton.</description>
       
@@ -86,10 +191,10 @@
     
     <item>
       <title>机器在学习，人们在沉迷</title>
-      <link>https://example.com/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</link>
+      <link>https://magiskxzy.org/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</link>
       <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</guid>
       
         <description></description>
       
@@ -97,10 +202,10 @@
     
     <item>
       <title>庾信、杜甫与张益唐</title>
-      <link>https://example.com/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</link>
+      <link>https://magiskxzy.org/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</link>
       <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</guid>
+      <guid>https://magiskxzy.org/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</guid>
       
         <description>&lt;p&gt;A introduction of Yu Xin,Du Fu and Zhang Yitang.&lt;/p&gt;</description>
       

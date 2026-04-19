@@ -1,40 +1,314 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Magisk&#39;s Blog</title>
-    <link>https://example.com/</link>
-    <description>Recent content on Magisk&#39;s Blog</description>
+    <title>Homepage on Magisk</title>
+    <link>https://magiskxzy.org/</link>
+    <description>Recent content in Homepage on Magisk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>『致命魔术』－诺兰</title>
-      <link>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</link>
-      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <title>Adblock（广告屏蔽）模块使用的梳理复盘与原理浅析</title>
+      <link>https://magiskxzy.org/hackers/adblock-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD-%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E8%87%B4%E5%91%BD%E9%AD%94%E6%9C%AF/</guid>
+      <guid>https://magiskxzy.org/hackers/adblock-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD-%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</guid>
+      
+        <description>在获取了手机的root权限之后，便可以对手机进行高度的自定义功能设置，例如把手机伪装成其他机型、将手机的性能调节为极致省电、甚至破解某些应用的本地会员。对于我来说，手机端的去广告操作则是在获取root权限之后必要的操作之一，目前对于手机端最省电、最无感去广告的方案即为刷入Adblock（广告屏蔽）模块，因此我将此前的去广告操作作一次梳理复盘与原理浅析。
+广告弹窗在本质上是通过网络传输到用户设备的数据。任何App在请求广告资源前，需要先通过53端口发起DNS查询以获取服务器IP。因此，Adblock模块的去广告思路就是在root权限下，劫持所有发往53端口的DNS解析请求，再通过规则匹配屏蔽已知的广告域名，阻断App广告数据的连接，从而实现去广告。
+以春梦无痕的Adguard-Home-For-Magisk-Mod（此后简称AGH）为例，地址为：https://github.com/liuzq2002/Adguard-Home-For-Magisk-Mod，该作者较为粗暴地使用iptables强制劫持所有发往53端口的DNS解析请求，希望用此种方式达到一个开箱即用的去广告模块效果。
+也因此，我在最初选择去广告方案的时候首选即为该AGH模块，但在实操中产生了相当多的问题。其中最重要的是，我在使用代理网络ip的软件时出现了极其频繁的网络重启现象。而在我依据作者在README中的介绍，弃用了该App而改用Box for Root（之后简称BFR）代理模块的时候，仍然造成了全局断网的窘境。
+在排查问题之后，基本可以确定症结来源于两个独立的冲突：一是BFR与AGH模块在底层抢夺53端口的“流量接管权”；二是该AGH模块内置了一个后台巡逻的ProxyConfig脚本，它的作用是每5秒检测一次代理配置，一旦发现DNS未指向AGH端口，就会强行篡改本地配置文件并频繁触发网络重启。所以如果和我有相同需求的朋友在配置网络时，一定不可以让代理模块、代理App与AGH模块平级控制流量，需要手动设置两个部件的上下级关系。
+为了缓解冲突，我首先尝试的是以AGH为主、BFR为辅的方式，但此种方案遭遇了流量回环仍无法联网使用。通过手动理顺了AGH+BFR的流量链路之后，ProxyConfig脚本仍然会强行把BFR的DNS上游又改回了AGH的5591端口。这导致DNS请求形成了“AGH问BFR-&amp;gt;BFR问AGH”的流量死循环。此外，BFR中的Fake-IP机制在AGH强制拉回流量的规则下也会产生地址解析错乱，并且手动禁用Fake-IP的这条路已经被作者春梦无痕暴力封死，导致无法自行操作（并且作者也不建议自行操作）。
+于是在彻底禁用AGH模块之后，我在论坛里看到了另一位老哥对于春梦无痕的修改版，地址为：https://github.com/linjoin/AdGuardHomeForRoot。此模块在刷入之后会检测设备/data/adb/box/目录下的BFR配置文件是否与模块自带的模板一致，如果存在冲突，它会触发模块的安全机制直接暂停服务，以此来严格避免网络配置冲突。在理顺配置后，我们可以通过修改它的settings.conf文件主动禁用其自带的iptables，让BFR掌握流量主导权，AGH则退居二线。默认情况下该模块不会接管任何流量，需要手动在BFR的配置文件中将流量转发给AGH的5591端口才可以去广告，不过这一点在AI的帮助下是不难实现的。
+通过改用linjoin的AGH模块，手机即可在非常省电的前提下，通过域名屏蔽去除绝大多数的开屏广告、隐私追踪和网页内置广告。但目前广告商投放广告的方法还有很多，比如抖音、小红书、Instagram之类网站的信息流广告，这种广告与应用内视频、图文等信息同域名，无法通过域名屏蔽的方式去除。</description>
+      
+    </item>
+    
+    <item>
+      <title>聊聊跑步吧</title>
+      <link>https://magiskxzy.org/painters/runblog_preface/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/runblog_preface/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>China cannot allow jobless young to ‘lie flat’</title>
-      <link>https://example.com/enblog/china-cannot-allow-jobless-young-to-lie-flat/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      <title>悉达多寻找悉达多</title>
+      <link>https://magiskxzy.org/painters/traversal/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/enblog/china-cannot-allow-jobless-young-to-lie-flat/</guid>
+      <guid>https://magiskxzy.org/painters/traversal/</guid>
       
-        <description>China cannot allow jobless young to&amp;rsquo;lie flat&amp;rsquo;原文链接</description>
+        <description>&lt;blockquote&gt;
+&lt;center&gt;在此，在熵之国度的消逝者中，&lt;/center&gt; 
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;做一只鸣响的杯子，在鸣响时破碎。&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;去存在———于此同时洞悉&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;非存在的暗示， 以及你内心感应的无限根基，&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;center&gt;于是你能圆满完成它们，仅此一次......&lt;/center&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h5 id=&#34;p-alignright---楔子p&#34;&gt;&lt;p align=&#34;right&#34;&gt;&amp;mdash;楔子&lt;/p&gt;&lt;/h5&gt;
+&lt;/blockquote&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>抖音推荐算法之Wide &amp; Deep Learning</title>
+      <link>https://magiskxzy.org/hackers/wide_deep_learning_introduction/</link>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/hackers/wide_deep_learning_introduction/</guid>
+      
+        <description>&lt;p&gt;近期，抖音在北京举行的“安全与信任中心开放日”上公开了抖音APP的算法推荐机制及原理，并将其大致内容摘取出来放在了抖音自建的安全与信任中心的“信息公开”部分:&lt;a href=&#34;https://95152.douyin.com/article/15358&#34;&gt;抖音推荐算法公开链接&lt;/a&gt;。
+众所周知，数学模型一贯是抽象、难以被理解的，而实际应用到抖音上时却又如此强大，因此依据抖音的公开信息、恰又赶上我刚离职得空，于是我便想写一篇博客介绍一下抖音公布算法之一的“Wide &amp;amp; Deep Learning”。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>博客域名更换为magiskxzy.org</title>
+      <link>https://magiskxzy.org/painters/domain_deprecation/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/domain_deprecation/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『旅行之木』</title>
+      <link>https://magiskxzy.org/iris/photography_5/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/photography_5/</guid>
+      
+        <description>&lt;p&gt;为什么会出现显示错误&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>一种爬虫的新方式</title>
+      <link>https://magiskxzy.org/hackers/drissionpage_introduction/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/hackers/drissionpage_introduction/</guid>
+      
+        <description>在面对一个需要大批量获取数据的任务时，如获取抖音评论、购物购车平台评分等，这部分数据除了氪金购买外，一般的做法是使用网络爬虫进行获取。但目前这些平台为了防止数据的泄露，近年来也在不断加强网站的反爬机制，因此网络爬虫在实际过程中的运用难度越来越高。
+网站爬虫的一般操作是:首先分析出所需数据的xpath或者正则表达来定位数据，再基于Selenium或者BeautifulSoup模拟浏览器运行、PyQuery解析和操作HTML文档，然后获取平台中商品价格、销量、地区、评论等信息，并存储于文档中。另一类则有不同思路，并非使用python模拟人类的浏览器操作，而是使用requests库直接向服务器发送请求数据包，以获取所需要的数据。
+但是Selenium库虽然可以操作浏览器、模拟用户行为，但使得浏览器运行效率并不高；而后者使用request请求数据包，就会面对需要登录的网站时，往往还要应付验证码、JS混淆、签名参数等反爬手段，门槛较高。若数据是由JS计算生成的，还须重现计算过程，开发效率不高。
+也是上述理由，在我又一次面对网络爬虫任务的时候感到头疼，不过很快随着我的搜索，一个新的爬虫解决方案被我翻了出来——DrissionPage。
+那么，DrissionPage是什么呢？
+DrissionPag设计初衷，是将request和Selenium两种数据获取的方式合而为一，并能够在不同须要时切换相应模式，提高开发和运行效率。
+由Claude生成：DrissionPage的核心架构由三个关键组件构成，它们通过精密的协作提供了强大的网页自动化能力。会话管理器作为框架的&amp;quot;大脑&amp;quot;，负责管理所有网络通信状态，包括在Selenium和Requests两种模式间自动同步cookies和session信息，统一管理代理设置和请求头配置，并能有效处理会话超时、重连等异常情况；页面对象模型(POM)则提供了统一的元素定位接口和链式操作支持，通过惰性加载机制提升性能，同时自动进行元素状态检查以确保操作可靠性；混合模式引擎则充当Selenium和Requests之间的智能桥梁，通过维护共享上下文来保持数据同步，并能根据不同操作类型自动选择最优模式，例如在需要JavaScript交互时使用Selenium，而在进行数据抓取时优先使用Requests。这三个组件的协同工作使得开发者能够通过统一的接口实现复杂的自动化任务，同时享受到简化的代码编写体验、更高的程序执行效率、增强的稳定性以及优化的资源占用，特别是在处理需要频繁切换操作模式的场景时，能够显著提升开发效率和程序性能。在内部实现上，它们通过事件驱动和状态同步机制保持紧密联系，任何一个组件的状态变化都会及时通知其他组件进行相应调整，从而确保整个系统的一致性和可靠性，这种设计不仅解决了传统网页自动化工具的局限性，还为复杂的网页交互自动化需求提供了一个优雅而高效的解决方案。
+DrissionPage项目地址：https://github.com/g1879/DrissionPage
+下面使用我自己爬取京东用户评论的例子，介绍一下DrissionPage的基础使用方法，第一步就是安装DrissionPage库到自己的电脑环境中。下载方式很简单，直接在cmd窗口调用pip下载即可：
+pip install DrissionPage 接下来，DrissionPage给予了使用者两个选择，一是可以使用SessionPage发送和接收数据包（SessionPage基于Python requests库实现，本质是一个增强版的Session对象），二是使用ChromiumPage启动浏览器模仿用户操作（ChromiumPage 基于Chrome DevTools Protocol实现，直接与浏览器内核通信，不依赖Selenium）。我在爬取京东评论的过程中使用的 ChromiumPage。</description>
+      
+    </item>
+    
+    <item>
+      <title>『焦灼』</title>
+      <link>https://magiskxzy.org/iris/photography_4/</link>
+      <pubDate>Sat, 21 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/photography_4/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>练跑计划</title>
+      <link>https://magiskxzy.org/painters/training_plan/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/training_plan/</guid>
+      
+        <description>硬盘到货了，需要学习一下硬盘的检测和性能参数了。因为已经报名了12月1日的马拉松健康跑，所以最近两天都在练跑，10月15号第一次跑，1h、6公里；16号第二天，1h30m、9公里。
+下面会制定一下锻炼的计划，因为我参加比赛的目的一是为了白嫖老板的五十块，因为他说参赛的费用可以报销，二是为了增加身体的掌控能力，因为长时间的不运动身体已经很懈怠了，所以锻炼计划里不会只有跑步：第一阶段是体能恢复阶段，第二阶段是体能加强阶段。
+第一阶段（10月15日~11月1日），最终目标是8公里/h、70个俯卧撑/日。
+第二阶段（11月2日~11月31日），最终目标是10公里的平均速度在6min/公里以内，120个俯卧撑/日。</description>
+      
+    </item>
+    
+    <item>
+      <title>买了一块固态硬盘</title>
+      <link>https://magiskxzy.org/painters/bought_a_drive/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/bought_a_drive/</guid>
+      
+        <description>其实近来发生了很多事情，我也曾动过很多次写博客的念头，但却总是因为拖延症一延再延。我想我必须花一些时间来整理自己的思绪、笔记和照片了，所以就从现在开始吧。
+十月伊始，各大购物平台就进入了双十一的预热，这倒真是有些让人哭笑不得的，毕竟提前一个月预热的购物街仿佛办的比春节中秋还要热闹，并且在各种软件的开屏页自动跳转京东淘宝是一件很让人讨厌的事情。于是我看到了固态硬盘的降价，这是硬盘继23年之后难得的降价，即使没有当时那么大力度的折扣，我也有些心动了，并且随手挑了一块三星990EP的2T版买了，这个固态没有缓外（其实也不太懂缓外的作用）。主要目的是有点战未来的想法，未来想组一个硬盘阵，或者NAS，之前买过一年的阿里云盘SVIP，但是后来被阿里云本地挂载限速、背刺SVIP等操作恶心到了，以后是再也不想买云盘的会员了，所以本地存储在我看来是很好的选择。后续我会多查一下有关硬盘性能的知识。
+另一个是老板想鼓励大家去参加青山区马拉松的健康跑，报销报名费、路费和餐费，嗯~ o(￣▽￣)o这不得抓住机会薅个羊毛，12月初开赛、全程8.5公里，虽然比起半马挑战性小了很多，但是大学生等于半个老年人的公式我还是记得的hhh。明天就抓紧练习吧。并且，这也意味着我要在这个公司待到12月，无妨，闲着多学一些，为明年开春做准备吧。
+混乱中取胜的要义就是清晰。</description>
+      
+    </item>
+    
+    <item>
+      <title>名字的第一个字母已经念出</title>
+      <link>https://magiskxzy.org/painters/the_first_letter_of_name/</link>
+      <pubDate>Sun, 26 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/the_first_letter_of_name/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『轻舞』</title>
+      <link>https://magiskxzy.org/iris/photography_3/</link>
+      <pubDate>Sat, 06 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/photography_3/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>此时此地</title>
+      <link>https://magiskxzy.org/painters/now-here/</link>
+      <pubDate>Sat, 06 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/now-here/</guid>
+      
+        <description>杂乱无章的躺在门口的三个铁质皱纸团、一个被切去面部的金属头、一个禁止符号，这些摆在门口的物件无不吸引着我进入这座美术馆，理由很充分了，但还不必要。但很快上天便将这个必要条件送到了我面前 &amp;ndash; 是一个&amp;quot;过度拟合&amp;quot;的艺术展名字，梢上这是加班又无任务的一天。
+我做决定向来很快，早上的想法，中午午休便出发了。我很快便看完了一楼，因为一楼在装修，只剩一些清明假期未开门的咖啡店招徕客人的书架里的书，品类都对我没有什么吸引力。楼梯间的路标上写着&amp;quot;二楼&amp;quot;、&amp;ldquo;过度拟合&amp;rdquo;，我赶上二楼，看完了一则序和一则跋，看到的却是把树莓派放进画框里、把矿石放到显微镜下的作品，我理解作者想要用这些理工科的代表物代表时代的发展，但我实在想不出这些和&amp;quot;过度拟合&amp;quot;的主题有什么联系，尤其是&amp;quot;过度&amp;quot;两字。继续往上，第三层的展品看完之后我有些不适感。并非在作品中出现了裸体、血腥，而是三层的作品仿佛都是在恶搞，在我的感觉里第三层的&amp;quot;未来&amp;quot;跟宇航员是必然挂钩的，几乎每幅作品都会有宇航员这个意象，而为了表达新意，于是便将宇航员进行各种杂糅，但在我看来只是创造力贫瘠的表现，各种怪异动作的强行附加让我没有觉得这是一件艺术品，而是恶搞，并且我也不认为这属于解构。或许只是我固执的认为恶搞不同于解构，但三楼的展品，我并不喜欢。
+就在已有去意的时候发现还有负一楼，来都来了，也就抱着无所谓的态度去转一转吧。&amp;ldquo;呼吸&amp;quot;是我在那里最先记住的词语，推荐序的作者是和&amp;quot;过度拟合&amp;quot;推荐者是同一人，文笔一般。这层的展品用三个短片征服了我，尤其是第三支影片临近结束时那段酷似卓别林的定格，我可以很确定，导演在讨论很现实的问题，有关女性主义、有关每一个劳动者的权益。导演仿佛在用那不断变化的形体和脸部强调，影片的主角可以是每一个人，我们不要逃避，也无法逃避。三支影片在三个放映室，这之间的距离放了很多这导演的摄影作品，拍的极好，色彩舒适，主体明确，是我在此时、此地可以感同身受的作品。临走前，我记住了作者的名字，他叫侯帅。
+后来啊，我也在想，曾几何时我也是一个疯狂热爱浪漫主义的人，那些天马行空的、不沾烟火的也是我曾喜欢的。念着&amp;quot;自信人生两百年、会当击水三千里&amp;rdquo;、&amp;ldquo;春来我不先开口，哪个虫儿敢作声&amp;quot;热血澎湃，</description>
+      
+    </item>
+    
+    <item>
+      <title>野心家</title>
+      <link>https://magiskxzy.org/painters/aspirant/</link>
+      <pubDate>Sat, 24 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/aspirant/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『边缘』</title>
+      <link>https://magiskxzy.org/iris/photography_2/</link>
+      <pubDate>Tue, 09 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/photography_2/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『布达佩斯大饭店』－韦斯·安德森</title>
+      <link>https://magiskxzy.org/iris/the_grand_budapest_hotel/</link>
+      <pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/the_grand_budapest_hotel/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『老无所依』－科恩兄弟</title>
+      <link>https://magiskxzy.org/iris/no_country_for_old_man/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/no_country_for_old_man/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>不灭恶龙与英雄登场</title>
+      <link>https://magiskxzy.org/painters/justice-and-benefit/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/justice-and-benefit/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『奥本海默』－诺兰</title>
+      <link>https://magiskxzy.org/iris/oppenheimer/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/oppenheimer/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『海街日记』－是枝裕和</title>
+      <link>https://magiskxzy.org/iris/our_little_sister/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/our_little_sister/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>酒旗风暖少年狂</title>
+      <link>https://magiskxzy.org/painters/%E9%85%92%E6%97%97%E9%A3%8E%E6%9A%96%E5%B0%91%E5%B9%B4%E7%8B%82/</link>
+      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/%E9%85%92%E6%97%97%E9%A3%8E%E6%9A%96%E5%B0%91%E5%B9%B4%E7%8B%82/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『霸王别姬』- 陈凯歌</title>
+      <link>https://magiskxzy.org/iris/farewell_my_concubine/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/farewell_my_concubine/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>『致命魔术』－诺兰</title>
+      <link>https://magiskxzy.org/iris/the_prestige/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/iris/the_prestige/</guid>
+      
+        <description></description>
       
     </item>
     
     <item>
       <title>『小偷家族』－是枝裕和</title>
-      <link>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</link>
+      <link>https://magiskxzy.org/iris/shoplifters/</link>
       <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E5%B0%8F%E5%81%B7%E5%AE%B6%E6%97%8F%E6%98%AF%E6%9E%9D%E8%A3%95%E5%92%8C/</guid>
+      <guid>https://magiskxzy.org/iris/shoplifters/</guid>
       
         <description></description>
       
@@ -42,10 +316,10 @@
     
     <item>
       <title>『情书』－岩井俊二</title>
-      <link>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</link>
+      <link>https://magiskxzy.org/iris/letters_of_love/</link>
       <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%83%85%E4%B9%A6%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C/</guid>
+      <guid>https://magiskxzy.org/iris/letters_of_love/</guid>
       
         <description></description>
       
@@ -53,10 +327,10 @@
     
     <item>
       <title>我怎能把你比作夏天</title>
-      <link>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</link>
+      <link>https://magiskxzy.org/painters/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</link>
       <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/enblog/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%88%91%E6%80%8E%E8%83%BD%E6%8A%8A%E4%BD%A0%E6%AF%94%E4%BD%9C%E5%A4%8F%E5%A4%A9/</guid>
       
         <description>莎士比亚十四行诗第18首
 Shall I compare thee to a summer&amp;rsquo;s day?
@@ -65,24 +339,24 @@ Thou art more lovely and more temperate:</description>
     </item>
     
     <item>
-      <title>论文复现『soft-DTW：a Differentiable Loss Function for Time-Series』</title>
-      <link>https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/</link>
+      <title>论文复现：soft-DTW：a Differentiable Loss Function for Time-Series</title>
+      <link>https://magiskxzy.org/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtw-a-differentiable-loss-function-for-time-series/</link>
       <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtwa-differentiable-loss-function-for-time-series/</guid>
+      <guid>https://magiskxzy.org/hackers/%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0soft-dtw-a-differentiable-loss-function-for-time-series/</guid>
       
-        <description>soft-DTW：a Differentiable Loss Function for Time-Series原文下载
+        <description>&amp;ldquo;soft-DTW：a Differentiable Loss Function for Time-Series&amp;rdquo;原文下载
 翻译 摘要： 我们在本文提出一种基于著名的动态时间规整(DTW)差异的可微学习损失函数，用于比较时间序列数据之间的差异。与欧氏距离不同，DTW可以比较具有不同长度的时间序列，并且对于时间维度上的平移或拉伸具有鲁棒性。为了计算DTW,一种常规方法是使用动态规划解决两个时间序列之间的最小成本校准。我们的工作利用了DTW的一种平滑形式，称为soft-DTW，它计算所有校准成本的soft最小值。我们在这篇论文中展示了soft-DTW是一个可微的损失函数，而且它的值和梯度都可以以二次时间/空间复杂度计算（而DTW具有二次时间复杂度但线性空间复杂度）。我们展示了这种正则化特别适用于在DTW几何空间下对时间序列进行平均化和聚类的任务，在这个任务中，我们的方法明显优于现有的基准方法。接下来，我们建议通过以soft-DTW的方式最小化输出时间序列机器与地面真实标签之间的拟合来调整其参数。
 1.介绍 监督学习的目标是通过使用输入与输出对象的示例，学习将输入映射到输出的关系。当输出对象具有结构时，例如它们不是向量，这个任务明显更加困难。我们在这里研究每个输出对象都是时间序列的情况，即一系列随时间索引的观测值。虽然将时间视为另一个特征，并将向量时间序列处理为所有这些向量的串联是很诱人的，但采用这种简单的方法会导致几个实际问题：时间索引的现象通常在时间轴上的某些区域被拉伸（例如，以稍慢于平常的速度发出的单词），但其特征不受影响；不同的采样条件可能导致它们具有不同的长度；时间序列可能不同步。</description>
       
     </item>
     
     <item>
-      <title>picture show_1</title>
-      <link>https://example.com/painters/picture-show_1/</link>
+      <title>『霁月』</title>
+      <link>https://magiskxzy.org/iris/photography_1/</link>
       <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/picture-show_1/</guid>
+      <guid>https://magiskxzy.org/iris/photography_1/</guid>
       
         <description></description>
       
@@ -90,10 +364,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>毕业</title>
-      <link>https://example.com/painters/%E6%AF%95%E4%B8%9A/</link>
+      <link>https://magiskxzy.org/painters/%E6%AF%95%E4%B8%9A/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%AF%95%E4%B8%9A/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%AF%95%E4%B8%9A/</guid>
       
         <description>&lt;p&gt;This is the dedication part of my graduation thesis.&lt;/p&gt;</description>
       
@@ -101,10 +375,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>揭谛揭谛，波罗揭谛</title>
-      <link>https://example.com/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</link>
+      <link>https://magiskxzy.org/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</link>
       <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%8F%AD%E8%B0%9B%E6%8F%AD%E8%B0%9B%E6%B3%A2%E7%BD%97%E6%8F%AD%E8%B0%9B/</guid>
       
         <description>&lt;p&gt;I seem to be trapped.&lt;/p&gt;</description>
       
@@ -112,10 +386,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>致人杰</title>
-      <link>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</link>
+      <link>https://magiskxzy.org/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</link>
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</guid>
+      <guid>https://magiskxzy.org/painters/%E8%87%B4%E4%BA%BA%E6%9D%B0/</guid>
       
         <description>Make a record of a poem that Edmond Halley wrote for Newton.</description>
       
@@ -123,10 +397,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>机器在学习，人们在沉迷</title>
-      <link>https://example.com/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</link>
+      <link>https://magiskxzy.org/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</link>
       <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</guid>
+      <guid>https://magiskxzy.org/painters/%E6%9C%BA%E5%99%A8%E5%9C%A8%E5%AD%A6%E4%B9%A0%E4%BA%BA%E4%BB%AC%E5%9C%A8%E6%B2%89%E8%BF%B7/</guid>
       
         <description></description>
       
@@ -134,10 +408,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>我与机器相互学习</title>
-      <link>https://example.com/hackers/%E6%88%91%E4%B8%8E%E6%9C%BA%E5%99%A8%E7%9B%B8%E4%BA%92%E5%AD%A6%E4%B9%A0/</link>
+      <link>https://magiskxzy.org/hackers/%E6%88%91%E4%B8%8E%E6%9C%BA%E5%99%A8%E7%9B%B8%E4%BA%92%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/hackers/%E6%88%91%E4%B8%8E%E6%9C%BA%E5%99%A8%E7%9B%B8%E4%BA%92%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://magiskxzy.org/hackers/%E6%88%91%E4%B8%8E%E6%9C%BA%E5%99%A8%E7%9B%B8%E4%BA%92%E5%AD%A6%E4%B9%A0/</guid>
       
         <description></description>
       
@@ -145,24 +419,25 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>About</title>
-      <link>https://example.com/about/</link>
+      <link>https://magiskxzy.org/about/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/about/</guid>
+      <guid>https://magiskxzy.org/about/</guid>
       
-        <description>欢迎你来到这里，我会对我的博客文件夹命名作出一些解释： 文件夹/兰台&amp;amp;HACKERS，其中的“兰台”指的是中国古代汉朝的藏书馆，其中的“Hackers”取自 保罗.格雷厄姆的《黑客与画家》一书的名字，我会在这一文件夹中写一些技术博客和学习记录；
-文件夹/云门&amp;amp;PAINTERS,其中的“云门”取自南北朝时期庾信在《枯树赋》中记载的一首上古乐曲， 其中的“Painters”同样使用保罗.格雷厄姆的《黑客与画家》一书的名字，我会在这一文件夹中写关于 书、电影、摄影的感悟。
-文件夹/EN blog,这里是英文博客的文件夹，虽然写英文博客可能会有些痛苦，但是我相信我能坚持下去的。
-在这里，我想创造一个世界，一个充满赛博气息的浪漫世界……</description>
+        <description>欢迎你来到这里，我会对我的博客文件夹命名作出一些解释∠( ᐛ 」∠)_ 文件夹/云门&amp;amp;PAINTERS,其中的&amp;quot;云门&amp;quot;取自庾信在《枯树赋》中记载的一首上古乐曲， 其中的&amp;quot;Painters&amp;quot;使用保罗.格雷厄姆的《黑客与画家》一书的名字，我会在这一文件夹中写下一些日志；
+文件夹/兰台&amp;amp;HACKERS，其中的&amp;quot;兰台&amp;quot;指的是中国古代汉朝的藏书馆，其中的&amp;quot;Hackers&amp;quot;同样取自 保罗.格雷厄姆的《黑客与画家》一书的名字，我会在这一文件夹中写一些技术博客和学习记录；
+文件夹/遐园&amp;amp;IRIS，其中的&amp;quot;遐&amp;quot;来自&amp;quot;毋金玉尔音，而有遐心&amp;quot;、“遐园&amp;quot;也是与天一阁齐名的古老藏书阁，“Iris&amp;quot;取自鸢尾花数据集，我会在这一文件夹中附上我喜欢的电影截图或是摄影图片；
+我想在这里，不会有那么多的嘈杂与审核&amp;hellip;&amp;hellip;
+我喜欢的博主们 ╭☞( ￣ ▽￣)╭☞ (注：以下链接皆为单向链接)</description>
       
     </item>
     
     <item>
       <title>庾信、杜甫与张益唐</title>
-      <link>https://example.com/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</link>
+      <link>https://magiskxzy.org/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</link>
       <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</guid>
+      <guid>https://magiskxzy.org/painters/%E5%BA%BE%E4%BF%A1%E6%9D%9C%E7%94%AB%E4%B8%8E%E5%BC%A0%E7%9B%8A%E5%94%90/</guid>
       
         <description>&lt;p&gt;A introduction of Yu Xin,Du Fu and Zhang Yitang.&lt;/p&gt;</description>
       
@@ -170,10 +445,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>Certifications</title>
-      <link>https://example.com/certifications/</link>
+      <link>https://magiskxzy.org/certifications/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/certifications/</guid>
+      <guid>https://magiskxzy.org/certifications/</guid>
       
         <description>Hugo Certifications</description>
       
@@ -181,10 +456,10 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title></title>
-      <link>https://example.com/archives/</link>
+      <link>https://magiskxzy.org/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/archives/</guid>
+      <guid>https://magiskxzy.org/archives/</guid>
       
         <description></description>
       
@@ -192,24 +467,23 @@ Thou art more lovely and more temperate:</description>
     
     <item>
       <title>Emoji Support</title>
-      <link>https://example.com/emoji-support/</link>
+      <link>https://magiskxzy.org/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/emoji-support/</guid>
+      <guid>https://magiskxzy.org/emoji-support/</guid>
       
         <description>Guide to emoji usage in Hugo</description>
       
     </item>
     
     <item>
-      <title></title>
-      <link>https://example.com/imprint/</link>
+      <title>《病梅馆记》</title>
+      <link>https://magiskxzy.org/imprint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/imprint/</guid>
+      <guid>https://magiskxzy.org/imprint/</guid>
       
-        <description>《鹧鸪天》
-莫	问	天	涯	路	几	重	，	轻	衫	侧	帽	且	从	容	。</description>
+        <description></description>
       
     </item>
     

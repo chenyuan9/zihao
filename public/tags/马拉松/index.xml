@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>马拉松 on Magisk</title>
+    <link>https://magiskxzy.org/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/</link>
+    <description>Recent content in 马拉松 on Magisk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>聊聊跑步吧</title>
+      <link>https://magiskxzy.org/painters/runblog_preface/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/runblog_preface/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>练跑计划</title>
+      <link>https://magiskxzy.org/painters/training_plan/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/training_plan/</guid>
+      
+        <description>硬盘到货了，需要学习一下硬盘的检测和性能参数了。因为已经报名了12月1日的马拉松健康跑，所以最近两天都在练跑，10月15号第一次跑，1h、6公里；16号第二天，1h30m、9公里。
+下面会制定一下锻炼的计划，因为我参加比赛的目的一是为了白嫖老板的五十块，因为他说参赛的费用可以报销，二是为了增加身体的掌控能力，因为长时间的不运动身体已经很懈怠了，所以锻炼计划里不会只有跑步：第一阶段是体能恢复阶段，第二阶段是体能加强阶段。
+第一阶段（10月15日~11月1日），最终目标是8公里/h、70个俯卧撑/日。
+第二阶段（11月2日~11月31日），最终目标是10公里的平均速度在6min/公里以内，120个俯卧撑/日。</description>
+      
+    </item>
+    
+    <item>
+      <title>买了一块固态硬盘</title>
+      <link>https://magiskxzy.org/painters/bought_a_drive/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/bought_a_drive/</guid>
+      
+        <description>其实近来发生了很多事情，我也曾动过很多次写博客的念头，但却总是因为拖延症一延再延。我想我必须花一些时间来整理自己的思绪、笔记和照片了，所以就从现在开始吧。
+十月伊始，各大购物平台就进入了双十一的预热，这倒真是有些让人哭笑不得的，毕竟提前一个月预热的购物街仿佛办的比春节中秋还要热闹，并且在各种软件的开屏页自动跳转京东淘宝是一件很让人讨厌的事情。于是我看到了固态硬盘的降价，这是硬盘继23年之后难得的降价，即使没有当时那么大力度的折扣，我也有些心动了，并且随手挑了一块三星990EP的2T版买了，这个固态没有缓外（其实也不太懂缓外的作用）。主要目的是有点战未来的想法，未来想组一个硬盘阵，或者NAS，之前买过一年的阿里云盘SVIP，但是后来被阿里云本地挂载限速、背刺SVIP等操作恶心到了，以后是再也不想买云盘的会员了，所以本地存储在我看来是很好的选择。后续我会多查一下有关硬盘性能的知识。
+另一个是老板想鼓励大家去参加青山区马拉松的健康跑，报销报名费、路费和餐费，嗯~ o(￣▽￣)o这不得抓住机会薅个羊毛，12月初开赛、全程8.5公里，虽然比起半马挑战性小了很多，但是大学生等于半个老年人的公式我还是记得的hhh。明天就抓紧练习吧。并且，这也意味着我要在这个公司待到12月，无妨，闲着多学一些，为明年开春做准备吧。
+混乱中取胜的要义就是清晰。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

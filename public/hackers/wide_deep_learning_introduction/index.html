@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    magisk
+        |
+        抖音推荐算法之Wide &amp; Deep Learning
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.105.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="magisk" />
+  <meta
+    name="description"
+    content="Dropped into Catch-22."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.1147aa5bacb4bce677a0e264073829caedb82fd18ea07a5f1d80521f539d1c45.css"
+      integrity="sha256-EUeqW6y0vOZ3oOJkBzgpyu24L9GOoHpfHYBSH1OdHEU="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7f3c2281c7f965ce3c64888aa452793252a0416909c181097f81d0a0f7d1624e.css"
+    integrity="sha256-fzwigcf5Zc48ZIiKpFJ5MlKgQWkJwYEJf4HQoPfRYk4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.35fc032da8ede6681675d20a2f862fb9e1045c1d512d495fcf862c054daffef2.css"
+    integrity="sha256-NfwDLajt5mgWddIKL4YvueEEXB1RLUlfz4YsBU2v/vI="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.3b92357925ea7284f0c6b0378396f39f470f7842ed9702f337e667c4026bf837.css"
+    integrity="sha256-O5I1eSXqcoTwxrA3g5bzn0cPeELtlwLzN&#43;ZnxAJr&#43;Dc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.ebb1096e1976e8cc4e2532cfa050b8f30eb13b8eb06be5cee3e38eb426b838ea.css"
+    integrity="sha256-67EJbhl26MxOJTLPoFC48w6xO46wa&#43;XO4&#43;OOtCa4OOo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://magiskxzy.org/hackers/wide_deep_learning_introduction/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="抖音推荐算法之Wide &amp; Deep Learning"/>
+<meta name="twitter:description" content="近期，抖音在北京举行的“安全与信任中心开放日”上公开了抖音APP的算法推荐机制及原理，并将其大致内容摘取出来放在了抖音自建的安全与信任中心的“信息公开”部分:抖音推荐算法公开链接。
+众所周知，数学模型一贯是抽象、难以被理解的，而实际应用到抖音上时却又如此强大，因此依据抖音的公开信息、恰又赶上我刚离职得空，于是我便想写一篇博客介绍一下抖音公布算法之一的“Wide &amp; Deep Learning”。"/>
+
+
+
+  
+  <meta property="og:title" content="抖音推荐算法之Wide &amp; Deep Learning" />
+<meta property="og:description" content="近期，抖音在北京举行的“安全与信任中心开放日”上公开了抖音APP的算法推荐机制及原理，并将其大致内容摘取出来放在了抖音自建的安全与信任中心的“信息公开”部分:抖音推荐算法公开链接。
+众所周知，数学模型一贯是抽象、难以被理解的，而实际应用到抖音上时却又如此强大，因此依据抖音的公开信息、恰又赶上我刚离职得空，于是我便想写一篇博客介绍一下抖音公布算法之一的“Wide &amp; Deep Learning”。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://magiskxzy.org/hackers/wide_deep_learning_introduction/" /><meta property="article:section" content="hackers" />
+<meta property="article:published_time" content="2025-04-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-04-28T00:00:00+00:00" /><meta property="og:site_name" content="Magisk" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "hackers",
+        "name": "抖音推荐算法之Wide \u0026 Deep Learning",
+        "headline": "抖音推荐算法之Wide \u0026 Deep Learning",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003e近期，抖音在北京举行的“安全与信任中心开放日”上公开了抖音APP的算法推荐机制及原理，并将其大致内容摘取出来放在了抖音自建的安全与信任中心的“信息公开”部分:\u003ca href=\u0022https:\/\/95152.douyin.com\/article\/15358\u0022\u003e抖音推荐算法公开链接\u003c\/a\u003e。\n众所周知，数学模型一贯是抽象、难以被理解的，而实际应用到抖音上时却又如此强大，因此依据抖音的公开信息、恰又赶上我刚离职得空，于是我便想写一篇博客介绍一下抖音公布算法之一的“Wide \u0026amp; Deep Learning”。\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/magiskxzy.org\/hackers\/wide_deep_learning_introduction\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "magisk"
+        },
+        "copyrightYear" : "2025",
+        "dateCreated": "2025-04-28T00:00:00.00Z",
+        "datePublished": "2025-04-28T00:00:00.00Z",
+        "dateModified": "2025-04-28T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "magisk",
+            "url": "https://magiskxzy.org",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/magiskxzy.org\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/magiskxzy.org\/hackers\/wide_deep_learning_introduction\/",
+        "wordCount" : "157",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "深度学习"
+
+    
+      
+        ,
+
+      
+      "推荐算法"
+
+    
+      
+        ,
+
+      
+      "抖音"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profilezzz.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Magisk</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Dropped into Catch-22.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://twitter.com/magiskxzy"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Twitter"
+            title="Twitter"
+          >
+            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://t.me/magisk_xzy"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Telegram"
+            title="Telegram"
+          >
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/chenyuan9"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:xzy_email@magiskxzy.org"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://magiskxzy.org/index.xml"
+            target="_blank"
+            rel="noopener me"
+            aria-label="RSS subscribe"
+            title="RSS subscribe"
+          >
+            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        magisk
+        2026
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/painters/"
+              
+              title=""
+              >Painters</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/hackers/"
+              
+              title=""
+              >Hackers</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/iris/"
+              
+              title=""
+              >Iris</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >about</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>抖音推荐算法之Wide &amp; Deep Learning</h1>
+      <p>近期，抖音在北京举行的“安全与信任中心开放日”上公开了抖音APP的算法推荐机制及原理，并将其大致内容摘取出来放在了抖音自建的安全与信任中心的“信息公开”部分:<a href="https://95152.douyin.com/article/15358">抖音推荐算法公开链接</a>。
+众所周知，数学模型一贯是抽象、难以被理解的，而实际应用到抖音上时却又如此强大，因此依据抖音的公开信息、恰又赶上我刚离职得空，于是我便想写一篇博客介绍一下抖音公布算法之一的“Wide &amp; Deep Learning”。</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$",  right: "$",  display: false},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  });
+</script>
+<h2 id="center算法介绍center"><center>算法介绍</center></h2>
+<p>推荐算法需要使用数学模型去理解用户行为，首要具备的就是“记忆性”（Memorization）。例如，当用户点赞了一段“Faker 的塞拉斯开团高光”视频，模型会牢记这是一个LOL的内容，基于这种记忆性，平台下一次就会继续推送LOL的视频。但这种记忆性仅针对明确的历史记录，而无法自动推断，因此下一个视频不会有任何逻辑去推送男团抛媚眼或者爆笑综艺之类的切片。然而，若仅依赖记忆性，就会导致用户点赞了帅哥美女之后，平台会单一推送更多帅哥美女的视频，那么当用户大脑分泌的多巴胺达到阈值时，算法工程师们想要将用户不断留在app内的野心也就难以实现了。此时就需要引入另一个模型特性——“泛化性”（Generalization）。我曾经在夜晚练跑时最常见到那类拉着一大货车果蔬的司机，夏天是西瓜、秋天是桔子和玉米，司机老板坐在一旁却不招徕，只是一味不知疲倦的刷着手机，从极大的外放声音可以听到，老板上一段刷着美帝野心，下一段便是美女辣舞，往后是美食切片、大国崛起、激情短剧、育儿心得、养生纲要云云，不知不觉过了很久，仿佛手中便拥有全世界。而这，便是所谓“泛化性”的效果体现。</p>
+<p>Wide &amp; Deep Learning模型是由谷歌的Heng-Tze Cheng等作者于2016年提出的推荐系统经典框架，记述在论文<a href="https://arxiv.org/abs/1606.07792v1">『Wide &amp; Deep Learning for Recommender Systems』</a>中，现作为抖音等头部平台的推荐算法核心架构，其核心创新在于通过双通道结构（Wide部分与Deep部分联合训练）实现“记忆性”与“泛化性”的协同互补。</p>
+<h2 id="centerwide部分--logistic模型center"><center>Wide部分&ndash;Logistic模型</center></h2>
+<p>Wide &amp; Deep Learning模型中的wide部分可以将视频的总体反馈简化为一个二分类问题“正反馈”和“负反馈”，当一个用户对于美女视频给出了正反馈，那么模型内部的标签记为$P（美女=1）$；如果该用户对于短剧给出了正反馈，那么模型内部的标签记为$P（短剧=1）$。可以构造逻辑回归模型如下：</p>
+<p>$$
+y = \mathbf{w}^T \times x + b
+$$</p>
+<p>其中，$x=[美女,短剧]$表示输入向量；$\mathbf{w}=[\mathbf{w_{美女}},\mathbf{w_{短剧}}]$表示输入向量$x$的权重；$b$表示偏差。</p>
+<p>当用户同时对美女视频和短剧均有正反馈时，该特征取1，否则取0，记为交叉特征：</p>
+<p>$$
+{\phi_{美女\times短剧}}(x) = x_{美女}\times x_{短剧}
+$$</p>
+<p>此时的$P({美女}\times{短剧}=1)$，同时输入向量$x$也就更正为$x=[美女,短剧,美女\times 短剧]$。由此，Wide 部分借助这些交叉特征，增强了广义线性模型的非线性记忆能力，对用户行为记录中频繁出现的特征组合进行精确记忆。</p>
+<h2 id="centerdeep部分--dnn模型center"><center>Deep部分&ndash;DNN模型</center></h2>
+<p>Wide &amp; Deep Learning模型中的deep部分主要解决的是推荐算法中的泛化性，作者Heng-Tze Cheng使用DNN模型进行处理。由于作者在<a href="https://arxiv.org/abs/1606.07792v1">原论文</a>中并没有说明为何选用DNN模型，而非CNN或者RNN，本文将三类模型的特点进行简单比较如下，从表1中可以看出，面对实时推荐这种大规模在线服务场景，DNN模型具有延迟低、硬件加速支持好等优势：</p>
+<center>表1</center>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>网络结构</th>
+<th>计算依赖</th>
+<th>实现复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DNN</strong></td>
+<td>多层全连接层</td>
+<td>矩阵乘加激活函数</td>
+<td>结构简单，实现和优化较为直接</td>
+</tr>
+<tr>
+<td><strong>CNN</strong></td>
+<td>卷积层、池化层和全连接层</td>
+<td>卷积、池化、矩阵乘加激活函数</td>
+<td>卷积核设计与优化、边界处理、实现细节复杂</td>
+</tr>
+<tr>
+<td><strong>RNN</strong></td>
+<td>递归展开的时序单元</td>
+<td>序列展开、状态维护、矩阵乘加激活函数</td>
+<td>时序展开与状态传递、梯度传播复杂</td>
+</tr>
+</tbody>
+</table>
+<p>DNN模型的具体结构主要分为三个层级：输入层、隐藏层和输出层。</p>
+<p><strong>输入层（Input Layer）</strong></p>
+<p>输入层负责接收原始数据特征，输入的原始数据形式如下：</p>
+<p>$$
+\mathbf{a} = [a_1,a_2,&hellip;,a_d]^T
+$$</p>
+<p>其中，$d$为特征维度，$\mathbf{a}\in\mathbb{R}^d$。在这个层级中，将所有类型的数据转化为数值型或者one-hot编码输入。</p>
+<p><strong>隐藏层（Hidden Layers）</strong></p>
+<p>隐藏层通过激活函数引入非线性能力，允许网络学习复杂的模式。其中，激活函数(ReLU)为：</p>
+<p>$$
+a^{L}=max(0,\mathbf{w}^{L} a^{(L-1)} + b^{L})
+$$
+ReLU激活函数的的主要特点是在输入大于零时输出输入值，否则输出零。这种非线性映射的方式可以通过增加稀疏性，减少神经元之间的耦合，增强模型的鲁棒性，从而提升整体模型的泛化能力。</p>
+<p><strong>输出层（Output Layer）</strong></p>
+<p>输出层主要负责输出模型的结果，每个类别分别对应一个输出神经元。</p>
+<p>使用Sigmoid函数：</p>
+<p>$$
+\sigma(z)=\frac{1}{1+e^{-z}}
+$$</p>
+<p>可以发现，Sigmoid函数的核心作用在于将每层的线性变换结果$z$映射为非线性输出，激活函数将任意实数压缩到$(0,1)$区间，既可以使$z\gg0$时输出趋近$1$、当$z\ll0$时输出趋近$0$，又保证全域可导，便于梯度下降求解参数。</p>
+<p>使用上述Sigmoid函数分类：</p>
+<p>$$
+a^L = \sigma\bigl(\mathbf{w}^T a^{(L-1)} + b)
+$$
+此种分类可以达到泛化效果，比如用户A在观看美女视频做出正反馈之后，对二次元及短剧类视频做出了正反馈，模型就会学习到美女视频与二次元及短剧类视频存在潜在关联。那么当用户B对“美女视频”产生正反馈时，模型基于相同的特征关联，就会泛化的推送二次元相关内容。</p>
+<h2 id="center-模型组装--widedeep模型center"><center> 模型组装&ndash;Wide&amp;Deep模型</center></h2>
+<p>在分别了解了wide和deep两部分之后，就可以将上述内容整合组装起来，构建一个完整的Wide&amp;Deep模型(这里的组装也可以理解为Wide&amp;Deep的联合训练)。将样本同时输入Wide部分和Deep部分，分别进行特征处理，两部分的输出通过加权求和得到最终的预测值$\hat{y}$，加权方式如下：</p>
+<p>$$
+\hat{y} = \sigma(\mathbf{w}^T_{wide}[\mathbf{x},\phi(\mathbf{x})]+ \mathbf{w}^T_{deep}{a^{l_f}} +b)
+$$</p>
+<p>在得到预测值$\hat{y}$后，依据损失函数计算梯度，将梯度同时反向传播至Wide和Deep部分，更新各自的模型参数以达到更好的推荐效果。基于该模型的训练，抖音便能不断为用户提供“嗑瓜子”式费一点力就享受一下的内容，从而打造一个沉浸式的平台体验。</p>
+<h2 id="center写在最后center"><center>写在最后</center></h2>
+<p>Wide &amp; Deep Learning模型结合了记忆与泛化的优点，既能精准捕捉用户记录上频繁出现的兴趣特征，也能挖掘出潜在的新组合，弥补了传统方法单独使用时的不足。它的网络结构非常简单，推理速度快，非常适合大规模、高并发的在线推荐环境。同时，Wide部分保留了直观易懂的特征解释，Deep部分又能通过自动学习减少人工特征设计的负担，整体既灵活又实用。</p>
+<p>抖音作为一个商用平台在短视频APP中的使用体验冠绝全球，这与其强大的推荐算法离不开关系，仅在安全与信任中心的“信息公开”部分就披露了多种模型算法的联合使用。由此可以观察到，抖音推荐系统并非依赖单一模型，而是通过多阶段模型协同推送。并且抖音虽说将诸如Wide&amp;Deep Learning之类的推荐算法进行公开示例，但并未说明其具体使用参数(在深度学习领域内，调整模型参数是及其重要的一环)和具体推送视频的调用算法流程。因此，本文仅作学习者与爱好者的参考之用。</p>
+<h2 id="center参考的文献博客与视频center"><center>参考的文献、博客与视频</center></h2>
+<p><a href="https://arxiv.org/abs/1606.07792v1">Wide &amp; Deep Learning for Recommender Systems</a></p>
+<p><a href="https://www.youtube.com/watch?v=NV1tkZ9Lq48">深入广泛学习：使用TensorFlow来记忆和归纳</a></p>
+<p><a href="https://www.youtube.com/watch?v=Xmw9SWJ0L50">Wide &amp; Deep Learning with TensorFlow - Machine Learning</a></p>
+<p><a href="https://research.google/blog/wide-amp-deep-learning-better-together-with-tensorflow/">Wide &amp; Deep Learning: Better Together with TensorFlow</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1636190">见微知著，你真的搞懂Google的Wide&amp;Deep模型了吗？</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1070675">谷歌推出 Wide Deep Learning，开源 TensorFlow API</a></p>
+<p><a href="https://www.youtube.com/watch?v=RhOVOgNl6Bw">ReLU激活函数有什么样的特点和优势</a></p>
+<p><a href="https://cqb.pku.edu.cn/tanglab/info/1005/2246.htm">随机梯度下降如何帮助深度学习找到泛化能力强的解</a></p></div>
+      <script src="https://utteranc.es/client.js"
+        repo="chenyuan9/zihao"
+        issue-term="title"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+      </script>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><a class="tag" href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">推荐算法</a><a class="tag" href="/tags/%E6%8A%96%E9%9F%B3/">抖音</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        magisk
+        2026
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>

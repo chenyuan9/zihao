@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>去广告模块 on Magisk</title>
+    <link>https://magiskxzy.org/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%A8%A1%E5%9D%97/</link>
+    <description>Recent content in 去广告模块 on Magisk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%A8%A1%E5%9D%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adblock（广告屏蔽）模块使用的梳理复盘与原理浅析</title>
+      <link>https://magiskxzy.org/hackers/adblock-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD-%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/hackers/adblock-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD-%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</guid>
+      
+        <description>在获取了手机的root权限之后，便可以对手机进行高度的自定义功能设置，例如把手机伪装成其他机型、将手机的性能调节为极致省电、甚至破解某些应用的本地会员。对于我来说，手机端的去广告操作则是在获取root权限之后必要的操作之一，目前对于手机端最省电、最无感去广告的方案即为刷入Adblock（广告屏蔽）模块，因此我将此前的去广告操作作一次梳理复盘与原理浅析。
+广告弹窗在本质上是通过网络传输到用户设备的数据。任何App在请求广告资源前，需要先通过53端口发起DNS查询以获取服务器IP。因此，Adblock模块的去广告思路就是在root权限下，劫持所有发往53端口的DNS解析请求，再通过规则匹配屏蔽已知的广告域名，阻断App广告数据的连接，从而实现去广告。
+以春梦无痕的Adguard-Home-For-Magisk-Mod（此后简称AGH）为例，地址为：https://github.com/liuzq2002/Adguard-Home-For-Magisk-Mod，该作者较为粗暴地使用iptables强制劫持所有发往53端口的DNS解析请求，希望用此种方式达到一个开箱即用的去广告模块效果。
+也因此，我在最初选择去广告方案的时候首选即为该AGH模块，但在实操中产生了相当多的问题。其中最重要的是，我在使用代理网络ip的软件时出现了极其频繁的网络重启现象。而在我依据作者在README中的介绍，弃用了该App而改用Box for Root（之后简称BFR）代理模块的时候，仍然造成了全局断网的窘境。
+在排查问题之后，基本可以确定症结来源于两个独立的冲突：一是BFR与AGH模块在底层抢夺53端口的“流量接管权”；二是该AGH模块内置了一个后台巡逻的ProxyConfig脚本，它的作用是每5秒检测一次代理配置，一旦发现DNS未指向AGH端口，就会强行篡改本地配置文件并频繁触发网络重启。所以如果和我有相同需求的朋友在配置网络时，一定不可以让代理模块、代理App与AGH模块平级控制流量，需要手动设置两个部件的上下级关系。
+为了缓解冲突，我首先尝试的是以AGH为主、BFR为辅的方式，但此种方案遭遇了流量回环仍无法联网使用。通过手动理顺了AGH+BFR的流量链路之后，ProxyConfig脚本仍然会强行把BFR的DNS上游又改回了AGH的5591端口。这导致DNS请求形成了“AGH问BFR-&amp;gt;BFR问AGH”的流量死循环。此外，BFR中的Fake-IP机制在AGH强制拉回流量的规则下也会产生地址解析错乱，并且手动禁用Fake-IP的这条路已经被作者春梦无痕暴力封死，导致无法自行操作（并且作者也不建议自行操作）。
+于是在彻底禁用AGH模块之后，我在论坛里看到了另一位老哥对于春梦无痕的修改版，地址为：https://github.com/linjoin/AdGuardHomeForRoot。此模块在刷入之后会检测设备/data/adb/box/目录下的BFR配置文件是否与模块自带的模板一致，如果存在冲突，它会触发模块的安全机制直接暂停服务，以此来严格避免网络配置冲突。在理顺配置后，我们可以通过修改它的settings.conf文件主动禁用其自带的iptables，让BFR掌握流量主导权，AGH则退居二线。默认情况下该模块不会接管任何流量，需要手动在BFR的配置文件中将流量转发给AGH的5591端口才可以去广告，不过这一点在AI的帮助下是不难实现的。
+通过改用linjoin的AGH模块，手机即可在非常省电的前提下，通过域名屏蔽去除绝大多数的开屏广告、隐私追踪和网页内置广告。但目前广告商投放广告的方法还有很多，比如抖音、小红书、Instagram之类网站的信息流广告，这种广告与应用内视频、图文等信息同域名，无法通过域名屏蔽的方式去除。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

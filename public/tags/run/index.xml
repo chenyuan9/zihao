@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>run on Magisk</title>
+    <link>https://magiskxzy.org/tags/run/</link>
+    <description>Recent content in run on Magisk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/tags/run/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>聊聊跑步吧</title>
+      <link>https://magiskxzy.org/painters/runblog_preface/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/painters/runblog_preface/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

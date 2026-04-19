@@ -1,106 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Magisk&#39;s Blog</title>
-    <link>https://example.com/tags/</link>
-    <description>Recent content in Tags on Magisk&#39;s Blog</description>
+    <title>Tags on Magisk</title>
+    <link>https://magiskxzy.org/tags/</link>
+    <description>Recent content in Tags on Magisk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>电影</title>
-      <link>https://example.com/tags/%E7%94%B5%E5%BD%B1/</link>
-      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      <title>kernelsu</title>
+      <link>https://magiskxzy.org/tags/kernelsu/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/%E7%94%B5%E5%BD%B1/</guid>
+      <guid>https://magiskxzy.org/tags/kernelsu/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>report</title>
-      <link>https://example.com/tags/report/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      <title>lsposed</title>
+      <link>https://magiskxzy.org/tags/lsposed/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/report/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Classical</title>
-      <link>https://example.com/tags/classical/</link>
-      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/tags/classical/</guid>
+      <guid>https://magiskxzy.org/tags/lsposed/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>Shakespeare</title>
-      <link>https://example.com/tags/shakespeare/</link>
-      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      <title>root</title>
+      <link>https://magiskxzy.org/tags/root/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/shakespeare/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>photography</title>
-      <link>https://example.com/tags/photography/</link>
-      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/tags/photography/</guid>
+      <guid>https://magiskxzy.org/tags/root/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>Sir Isaac Newton</title>
-      <link>https://example.com/tags/sir-isaac-newton/</link>
-      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      <title>去广告模块</title>
+      <link>https://magiskxzy.org/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/sir-isaac-newton/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>ChatGPT</title>
-      <link>https://example.com/tags/chatgpt/</link>
-      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/tags/chatgpt/</guid>
+      <guid>https://magiskxzy.org/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%A8%A1%E5%9D%97/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>机器学习</title>
-      <link>https://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      <title>run</title>
+      <link>https://magiskxzy.org/tags/run/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://magiskxzy.org/tags/run/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://example.com/tags/python/</link>
-      <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
+      <title>马拉松</title>
+      <link>https://magiskxzy.org/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/python/</guid>
+      <guid>https://magiskxzy.org/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>抖音</title>
+      <link>https://magiskxzy.org/tags/%E6%8A%96%E9%9F%B3/</link>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/%E6%8A%96%E9%9F%B3/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>推荐算法</title>
+      <link>https://magiskxzy.org/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/</guid>
       
         <description></description>
       
@@ -108,21 +97,142 @@
     
     <item>
       <title>深度学习</title>
-      <link>https://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
+      <link>https://magiskxzy.org/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://magiskxzy.org/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
       
         <description></description>
       
     </item>
     
     <item>
-      <title>神经网络</title>
-      <link>https://example.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <title>crawler</title>
+      <link>https://magiskxzy.org/tags/crawler/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/crawler/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>photography</title>
+      <link>https://magiskxzy.org/tags/photography/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/photography/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://magiskxzy.org/tags/python/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/python/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>硬盘</title>
+      <link>https://magiskxzy.org/tags/%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/%E7%A1%AC%E7%9B%98/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>movie</title>
+      <link>https://magiskxzy.org/tags/movie/</link>
+      <pubDate>Sat, 24 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/movie/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>story</title>
+      <link>https://magiskxzy.org/tags/story/</link>
+      <pubDate>Sat, 24 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/story/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Classical</title>
+      <link>https://magiskxzy.org/tags/classical/</link>
+      <pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/classical/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Shakespeare</title>
+      <link>https://magiskxzy.org/tags/shakespeare/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/shakespeare/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sir Isaac Newton</title>
+      <link>https://magiskxzy.org/tags/sir-isaac-newton/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/sir-isaac-newton/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ChatGPT</title>
+      <link>https://magiskxzy.org/tags/chatgpt/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/chatgpt/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Marchine Learning</title>
+      <link>https://magiskxzy.org/tags/marchine-learning/</link>
+      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://magiskxzy.org/tags/marchine-learning/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://magiskxzy.org/tags/deep-learning/</link>
       <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <guid>https://magiskxzy.org/tags/deep-learning/</guid>
       
         <description></description>
       
@@ -130,10 +240,10 @@
     
     <item>
       <title>math</title>
-      <link>https://example.com/tags/math/</link>
+      <link>https://magiskxzy.org/tags/math/</link>
       <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/math/</guid>
+      <guid>https://magiskxzy.org/tags/math/</guid>
       
         <description></description>
       
@@ -141,10 +251,10 @@
     
     <item>
       <title>张益唐</title>
-      <link>https://example.com/tags/%E5%BC%A0%E7%9B%8A%E5%94%90/</link>
+      <link>https://magiskxzy.org/tags/%E5%BC%A0%E7%9B%8A%E5%94%90/</link>
       <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/%E5%BC%A0%E7%9B%8A%E5%94%90/</guid>
+      <guid>https://magiskxzy.org/tags/%E5%BC%A0%E7%9B%8A%E5%94%90/</guid>
       
         <description></description>
       
@@ -152,10 +262,10 @@
     
     <item>
       <title>emoji</title>
-      <link>https://example.com/tags/emoji/</link>
+      <link>https://magiskxzy.org/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/emoji/</guid>
+      <guid>https://magiskxzy.org/tags/emoji/</guid>
       
         <description></description>
       
@@ -163,10 +273,10 @@
     
     <item>
       <title>index</title>
-      <link>https://example.com/tags/index/</link>
+      <link>https://magiskxzy.org/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/index/</guid>
+      <guid>https://magiskxzy.org/tags/index/</guid>
       
         <description></description>
       
