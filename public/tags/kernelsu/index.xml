@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://magiskxzy.org/tags/kernelsu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adblock（广告屏蔽）模块使用的梳理复盘与原理浅析</title>
-      <link>https://magiskxzy.org/hackers/adblock-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD-%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</link>
+      <link>https://magiskxzy.org/hackers/android%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%96%B9%E6%A1%88%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</link>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://magiskxzy.org/hackers/adblock-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD-%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</guid>
+      <guid>https://magiskxzy.org/hackers/android%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%96%B9%E6%A1%88%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</guid>
       
         <description>在获取了手机的root权限之后，便可以对手机进行高度的自定义功能设置，例如把手机伪装成其他机型、将手机的性能调节为极致省电、甚至破解某些应用的本地会员。对于我来说，手机端的去广告操作则是在获取root权限之后必要的操作之一，目前对于手机端最省电、最无感去广告的方案即为刷入Adblock（广告屏蔽）模块，因此我将此前的去广告操作作一次梳理复盘与原理浅析。
 广告弹窗在本质上是通过网络传输到用户设备的数据。任何App在请求广告资源前，需要先通过53端口发起DNS查询以获取服务器IP。因此，Adblock模块的去广告思路就是在root权限下，劫持所有发往53端口的DNS解析请求，再通过规则匹配屏蔽已知的广告域名，阻断App广告数据的连接，从而实现去广告。
