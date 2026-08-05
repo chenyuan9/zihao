@@ -14,3 +14,6 @@ resources/
 
 # Reference material (not part of the site; copyright-sensitive)
 Reference/
+
+# Drafts (local only, never pushed)
+content/_drafts/
