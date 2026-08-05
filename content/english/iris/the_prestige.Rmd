@@ -5,7 +5,7 @@ date: "2023-07-24"
 output: md_document
 tags:
   - movie
-thumbnail: "/images/致命魔术－诺兰/Snipaste_2023-10-26_16-00-14.png/"
+thumbnail: "/images/致命魔术－诺兰/Snipaste_2023-10-26_16-00-14.png"
 ---
 
 <!--more-->
