@@ -1,4 +1,16 @@
+# R / RStudio
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# Hugo / blogdown build artifacts
+public/
+resources/
+.hugo_build.lock
+
+# Knitted / rendered output
+*.html
+
+# Reference material (not part of the site; copyright-sensitive)
+Reference/
